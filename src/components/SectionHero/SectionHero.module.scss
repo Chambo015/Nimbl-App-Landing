@@ -1,0 +1,40 @@
+.fulljustify {
+  text-align: justify;
+}
+.fulljustify:after {
+  content: '';
+  display: inline-block;
+  width: 100%;
+}
+#tagline {
+  height: 80px;
+  overflow: hidden;
+  line-height: 80px; /* vert-center */
+}
+
+.main-title {
+  background: linear-gradient(180deg, #FFF 0%, rgba(255, 255, 255, 0.40) 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: relative;
+  @apply text-center font-rfdewi inline-block bg-clip-text text-white text-[145px] leading-none font-black uppercase -translate-x-2 -translate-y-7
+
+  
+}
+
+.main-text-layer {
+  background-image: url('../../assets/image1895.png');
+  background-size: cover;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  mix-blend-mode: overlay;
+  z-index: 1;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  
+}
