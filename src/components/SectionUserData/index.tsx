@@ -1,15 +1,19 @@
 import React from 'react';
 import logo from '@/assets/logo.png';
 import {CheckSolid} from '../icons/CheckSolid';
-import { LockIcon } from '../icons/LockIcon';
+import {LockIcon} from '../icons/LockIcon';
+import imgBg from '@/assets/db-bg.png';
 
 export const SectionUserData = () => {
   return (
-    <section className="pt-52">
+    <section className="">
+      <div className="flex justify-center -mb-[250px]">
+        <img src={imgBg} alt="imgBg" className="w-[1920px] object-contain mix-blend-lighten" />
+      </div>
       <div className="container flex justify-between items-center">
-        <div className='flex-shrink-0'>
-          <span className="text-[#0061F0]  text-2xl font-medium font-gilroy py-1 px-2 bg-sky-950 border border-blue-800">
-            Privacy and Personalization
+        <div className="flex-shrink-0">
+          <span className="text-[#0061F0]  text-2xl font-medium font-gilroy py-1 px-2 bg-[#001D48] border border-[#1017B9]">
+            Powered by Lens
           </span>
           <h2 className="w-[570px] mt-5 bg-gradient-to-b from-white to-white/50 text-transparent bg-clip-text text-5xl font-black uppercase font-rfdewi">
             Decentralizing <span className="whitespace-nowrap">the user-data</span>
@@ -19,12 +23,12 @@ export const SectionUserData = () => {
             personal data remains confidential
           </p>
         </div>
-        <div className='flex items-center'>
+        <div className="flex items-center">
           <LockIcon />
-          <div className='w-32 -mr-2 -ml-3 relative -z-10 h-3 bg-[rgba(211,211,211,.08)] border border-neutral-600/30'></div>
+          <div className="w-32 -mr-2 -ml-3 relative -z-10 h-3 bg-[rgba(211,211,211,.08)] border border-neutral-600/30"></div>
           <div className="bg-indigo-950 w-[240px] relative z-10">
             <div className="p-5">
-              <img src={logo} alt="logo" className='w-[85px] h-[31px] object-contain mb-8'/>
+              <img src={logo} alt="logo" className="w-[85px] h-[31px] object-contain mb-8" />
               <div className="flex items-center gap-4 mb-6">
                 <CheckSolid />
                 <p className="text-white text-xl font-medium font-gilroy">Usernames</p>
@@ -42,7 +46,9 @@ export const SectionUserData = () => {
                 <p className="text-white text-xl font-medium font-gilroy">History</p>
               </div>
             </div>
-            <div className='h-10 bg-[#001D48] flex items-center justify-center border border-blue-800'><p className='text-center text-white/70 font-gilroy text-xl font-medium'>100+ Dates</p></div>
+            <div className="h-10 bg-[#001D48] flex items-center justify-center border border-blue-800">
+              <p className="text-center text-white/70 font-gilroy text-xl font-medium">100+ Dates</p>
+            </div>
           </div>
         </div>
       </div>

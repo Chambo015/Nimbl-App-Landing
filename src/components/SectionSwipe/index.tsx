@@ -6,7 +6,7 @@ import swipeRight from '@/assets/swipe-toSave.png'
 
 export const SectionSwipe = () => {
   return (
-    <section className="pt-24">
+    <section className="pt-32">
       <div className="container flex gap-14 justify-between items-center">
         <div className="w-[400px]">
           <h2 className="bg-gradient-to-b from-white to-white/50 font-rfdewi text-transparent bg-clip-text	 text-5xl font-black uppercase">

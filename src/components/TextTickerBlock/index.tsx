@@ -1,69 +1,54 @@
-import React from 'react';
-import {useKeenSlider} from 'keen-slider/react';
-import 'keen-slider/keen-slider.min.css';
+import {FC} from 'react';
+import './styles.scss';
 
-const animation = {duration: 15000, easing: (t: number) => t};
+type Props = {
+  text?: string;
+};
 
-export const TextTickerBlock = () => {
-  const [sliderRef] = useKeenSlider<HTMLDivElement>({
-    loop: true,
-    renderMode: 'performance',
-    drag: false,
-    mode: 'snap',
-    slides: {perView: 'auto', spacing: 10,},
-    created(s) {
-      s.moveToIdx(39, true, animation);
-    },
-    updated(s) {
-      s.moveToIdx(s.track.details.abs + 39, true, animation);
-    },
-    animationEnded(s) {
-      s.moveToIdx(s.track.details.abs + 39, true, animation);
-    },
-  });
+export const TextTickerBlock: FC<Props> = () => {
+  const text = [
+    'Communities',
+    'Entertaimnet',
+    'Announcements',
+    'Podcasts',
+    'Gems',
+    'Bounties',
+    'Educational content',
+    'Airdrops',
+    'Web3 project updates',
+    'AMAs  Communities',
+  ];
   return (
-    <div ref={sliderRef} className="keen-slider w-full bg-[#20133E] py-3 mt-28 overflow-hidden  [&>span]:whitespace-nowrap [&>span]:font-gilroy [&>span]:overflow-hidden shrink-0 [&>span]:flex-shrink-0 [&>span]:!w-[max-content]">
-      <span className="keen-slider__slide ">Communities</span>
-      <span className="keen-slider__slide ">•</span>
-      <span className="keen-slider__slide  ">Entertaimnet</span>
-      <span className="keen-slider__slide ">•</span>
-      <span className="keen-slider__slide  ">Announcements</span>
-      <span className="keen-slider__slide  ">•</span>
-      <span className="keen-slider__slide  ">Podcasts</span>
-      <span className="keen-slider__slide ">•</span>
-      <span className="keen-slider__slide ">Gems</span>
-      <span className="keen-slider__slide ">•</span>
-      <span className="keen-slider__slide ">Bounties</span>
-      <span className="keen-slider__slide ">•</span>
-      <span className="keen-slider__slide ">Educational content </span>
-      <span className="keen-slider__slide ">•</span>
-      <span className="keen-slider__slide ">Airdrops</span>
-      <span className="keen-slider__slide ">•</span>
-      <span className="keen-slider__slide ">AMAs Communities </span>
-      <span className="keen-slider__slide ">•</span>
-      <span className="keen-slider__slide ">Web3 project updates</span>
-      <span className="keen-slider__slide ">•</span>
-      <span className="keen-slider__slide ">Communities</span>
-      <span className="keen-slider__slide ">•</span>
-      <span className="keen-slider__slide ">Entertaimnet</span>
-      <span className="keen-slider__slide ">•</span>
-      <span className="keen-slider__slide ">Announcements</span>
-      <span className="keen-slider__slide ">•</span>
-      <span className="keen-slider__slide ">Podcasts</span>
-      <span className="keen-slider__slide ">•</span>
-      <span className="keen-slider__slide ">Gems</span>
-      <span className="keen-slider__slide ">•</span>
-      <span className="keen-slider__slide ">Bounties</span>
-      <span className="keen-slider__slide ">•</span>
-      <span className="keen-slider__slide ">Educational content </span>
-      <span className="keen-slider__slide ">•</span>
-      <span className="keen-slider__slide ">Airdrops</span>
-      <span className="keen-slider__slide ">•</span>
-      <span className="keen-slider__slide ">AMAs Communities </span>
-      <span className="keen-slider__slide ">•</span>
-      <span className="keen-slider__slide ">Web3 project updates</span>
-      <span className="keen-slider__slide ">•</span>
-    </div>
+    <section className="bg-[#20133E] font-gilroy text-white flex w-screen overflow-hidden mt-16">
+      <div className="whitespace-nowrap inner-line relative py-1 xl:py-2 shrink-0 mx-2">
+        {text.map((item) => {
+          return <><span>{item}</span><span className='px-2'>•</span></>;
+        })}
+        {text.map((item) => {
+          return <><span>{item}</span><span className='px-2'>•</span></>;
+        })}
+        {text.map((item) => {
+          return <><span>{item}</span><span className='px-2'>•</span></>;
+        })}
+        {text.map((item) => {
+          return <><span>{item}</span><span className='px-2'>•</span></>;
+        })}
+      </div>
+      <div className="whitespace-nowrap inner-line  relative py-1 xl:py-2 shrink-0 mx-2">
+      {text.map((item) => {
+          return <><span>{item}</span><span className='px-2'>•</span></>;
+        })}
+        {text.map((item) => {
+          return <><span>{item}</span><span className='px-2'>•</span></>;
+        })}
+        {text.map((item) => {
+          return <><span>{item}</span><span className='px-2'>•</span></>;
+        })}
+        {text.map((item) => {
+          return <><span>{item}</span><span className='px-2'>•</span></>;
+        })}
+      </div>
+    </section>
   );
 };
 

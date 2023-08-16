@@ -2,7 +2,7 @@ import { FC, ReactNode } from 'react'
 import style from './AppButton.module.scss'
 
 type Props = {
-    children: ReactNode
+    children: ReactNode,
 }
 
 export const AppButton: FC<Props> = ({ children }) => {

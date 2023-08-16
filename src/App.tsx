@@ -8,6 +8,12 @@ import { TextTickerBlock } from './components/TextTickerBlock';
 import { SectionSwipe } from './components/SectionSwipe';
 import { SectionUserData } from './components/SectionUserData';
 import { SectionModeration } from './components/SectionModeration';
+import { SectionCrypto } from './components/SectionCrypto';
+import { SectionSummarizeVideo } from './components/SectionSummarizeVideo';
+import { SectionGridAI } from './components/SectionGridAI';
+import { SectionClaim } from './components/SectionClaim';
+import { SectionToken } from './components/SectionToken';
+import { SectionRoadmap } from './components/SectionRoadmap';
 
 function App() {
   const [count, setCount] = useState(0);
@@ -15,12 +21,18 @@ function App() {
   return (
     <>
       <AppHeader />
-      <main className="main">
+      <main className="main overflow-hidden">
         <SectionHero />
         <TextTickerBlock />
         <SectionUserData />
         <SectionModeration />
         <SectionSwipe />
+        <SectionCrypto />
+        <SectionSummarizeVideo />
+        <SectionGridAI />
+        <SectionClaim />
+        <SectionToken />
+        <SectionRoadmap />
       </main>
     </>
   );

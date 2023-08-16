@@ -1,0 +1,32 @@
+div.inner-line {
+  transform: translateX(100%);
+  animation: animate linear infinite;
+  animation-duration: 100s;
+  animation-delay: -100s;
+  will-change: transform;
+  vertical-align: middle;
+}
+
+div.inner-line:nth-child(2) {
+  animation: animate2 linear infinite;
+  animation-duration: 100s;
+  animation-delay: -50s;
+}
+
+@keyframes animate {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes animate2 {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-200%);
+  }
+}

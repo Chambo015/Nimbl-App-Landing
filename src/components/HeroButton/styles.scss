@@ -1,0 +1,9 @@
+button.wrap {
+    clip-path: polygon(30px 0, 100% 0, 100% calc(100% - 30px), calc(100% - 30px) 100%, 0 100%, 0 30px);
+    background-image: radial-gradient(119.98% 176.69% at 84.00% -4.95%, rgba(170, 214, 255, 0.81) 0%, rgba(170, 214, 255, 0.81) 0.01%, #0066FE 100%);
+}
+div.inner-border {
+    $wb: 2px;
+    clip-path: polygon(0% 30px, 30px 0%, 100% 0%, 100% calc(100% - 30px), calc(100% - 30px) 100%, 0% 100%, $wb calc(100% - $wb), calc(100% - 30px) calc(100% - $wb), calc(100% - $wb) calc(100% - 30px), calc(100% - $wb) $wb, calc(30px) $wb, $wb calc( 30px),$wb calc(100% - $wb), 0% 100%);
+background-color: #7379FF
+}

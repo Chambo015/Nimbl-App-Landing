@@ -1,5 +1,4 @@
 import {AppButton} from '../AppButton';
-import style from './Header.module.scss';
 import logo from '@/assets/logo.png';
 
 export const AppHeader = () => {
