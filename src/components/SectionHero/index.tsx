@@ -6,7 +6,7 @@ export const SectionHero = () => {
   const time = new Date();
   time.setSeconds(time.getSeconds() + 900000); // 10 minutes timer
   return (
-    <section>
+    <section className='mt-20'>
       <div className="container justify-center flex pt-[50px]">
         <div className="inline-flex flex-col">
           <p className="text-justify lin font-gilroy leading-none after:inline-block after:w-full text-white text-2xl font-normal uppercase tracking-[.6em]">

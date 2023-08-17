@@ -14,6 +14,8 @@ import { SectionGridAI } from './components/SectionGridAI';
 import { SectionClaim } from './components/SectionClaim';
 import { SectionToken } from './components/SectionToken';
 import { SectionRoadmap } from './components/SectionRoadmap';
+import { AppFooter } from './components/AppFooter';
+import { SectionCreateUsers } from './components/SectionCreateUsers';
 
 function App() {
   const [count, setCount] = useState(0);
@@ -28,12 +30,14 @@ function App() {
         <SectionModeration />
         <SectionSwipe />
         <SectionCrypto />
+        <SectionCreateUsers />
         <SectionSummarizeVideo />
         <SectionGridAI />
         <SectionClaim />
         <SectionToken />
         <SectionRoadmap />
       </main>
+      <AppFooter />
     </>
   );
 }

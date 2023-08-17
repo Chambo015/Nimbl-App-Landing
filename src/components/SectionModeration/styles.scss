@@ -1,0 +1,21 @@
+div.scanner {
+  background-image: linear-gradient(to top right, rgb(99,42,227) 0%, transparent 50%);
+  transform-origin: top left;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  width: 600px;
+  height: 600px;
+  border-left: 1px solid rgba(rgb(99,42,227), 0.1);
+  will-change: transform;
+  animation: scan 4s linear infinite;
+}
+
+@keyframes scan {
+  from {
+    transform: rotate(80deg);
+  }
+  to {
+    transform: rotate(310deg);
+  }
+}

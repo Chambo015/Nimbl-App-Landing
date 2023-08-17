@@ -5,7 +5,7 @@ import imgCard from '@/assets/business-card.png'
 
 export const SectionCrypto = () => {
   return (
-    <section className="bg-[#0F0722] relative">
+    <section className="bg-[#0F0722] relative mt-28">
       <img src={bgGradient} alt="bgGradient" className='absolute inset-0 z-0 w-full h-full' />
       <div className="container flex items-center z-10">
         <div className="flex pt-[90px] justify-between w-full">

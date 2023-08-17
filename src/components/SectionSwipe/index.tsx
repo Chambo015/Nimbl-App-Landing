@@ -16,11 +16,12 @@ export const SectionSwipe = () => {
             to <span className="text-[#6529E0]">Filter</span> to <span className="text-[#6529E0]">Save</span>
           </p>
           <p className="text-2xl text-white/80 mt-8 font-gilroy">
-            You are in complete control of the content that you see, all the time. Days of users being enslaved by the
-            algorithm are over.
+          Be in control of the content that you receive on feed.
+
+<span className=' mt-4 block'>Swipe left to filter, swipe right to save</span>
           </p>
           <div className="h-[180px]">
-            <VerticalSlider initIdx={35} length={60} width={23} loop={true} perspective="left" />
+           
           </div>
         </div>
         <div className='relative'>
