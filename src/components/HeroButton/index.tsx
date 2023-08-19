@@ -1,4 +1,4 @@
-import React, {FC, ReactNode, useMemo} from 'react';
+import {FC, ReactNode, useMemo} from 'react';
 import './styles.scss';
 
 import imgBg from '@/assets/btn-texture.png';
@@ -19,7 +19,7 @@ export const HeroButton: FC<Props> = ({children, xs, regular}) => {
       return 'w-[500px] h-[95px] max-sm:w-[266px] max-sm:h-[50px]'
     }
   }
-  const radiusBorder = useMemo(() => {
+  const radiusBorder: string = useMemo(() => {
     if(xs) {
       return matches ?  '13px' :  '8px'
     } else {

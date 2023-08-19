@@ -1,4 +1,3 @@
-import React from 'react';
 import {WebClaimYourHandle} from '../icons/WebClaimYourHandle';
 import radarIcon from '@/assets/radar-icon.png';
 import { HeroButton } from '../HeroButton';

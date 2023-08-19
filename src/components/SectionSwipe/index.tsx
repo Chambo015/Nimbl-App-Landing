@@ -1,4 +1,3 @@
-import React from 'react';
 import VerticalSlider from './VerticalSlider';
 import mobileImg from '@/assets/swipe.png';
 import swipeLeft from '@/assets/swipe-toFilter.png';

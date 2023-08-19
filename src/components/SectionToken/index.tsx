@@ -1,4 +1,3 @@
-import React from 'react';
 import imgEarth from '@/assets/planet-nimbl.png';
 import imgEarthSm from '@/assets/planet-nimbl-sm.png';
 import stake from '@/assets/stake.png';

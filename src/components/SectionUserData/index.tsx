@@ -1,4 +1,3 @@
-import React from 'react';
 import logo from '@/assets/logo.png';
 import {CheckSolid} from '../icons/CheckSolid';
 import {LockIcon} from '../icons/LockIcon';
