@@ -16,6 +16,7 @@ import { SectionToken } from './components/SectionToken';
 import { SectionRoadmap } from './components/SectionRoadmap';
 import { AppFooter } from './components/AppFooter';
 import { SectionCreateUsers } from './components/SectionCreateUsers';
+import { SectionClipToLong } from './components/SectionClipToLong';
 
 function App() {
   const [count, setCount] = useState(0);
@@ -29,6 +30,7 @@ function App() {
         <SectionUserData />
         <SectionModeration />
         <SectionSwipe />
+        <SectionClipToLong />
         <SectionCrypto />
         <SectionCreateUsers />
         <SectionSummarizeVideo />

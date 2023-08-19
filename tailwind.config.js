@@ -16,6 +16,10 @@ export default {
     },
     container: {
       center: true,
+      padding: {
+        DEFAULT: '20px',
+        xl: 0
+      },
       screens: {
         sm: '640px',
         md: '768px',

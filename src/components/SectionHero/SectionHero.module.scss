@@ -18,7 +18,7 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   position: relative;
-  @apply text-center font-rfdewi inline-block bg-clip-text text-white text-[145px] leading-none font-black uppercase -translate-x-2 -translate-y-7
+  @apply text-center font-rfdewi inline-block bg-clip-text text-white text-[145px] max-sm:text-[50px] leading-none font-black uppercase -translate-x-2 -translate-y-7 max-sm:-translate-x-0 max-sm:-translate-y-6
 
   
 }
