@@ -7,14 +7,17 @@ import { useMediaQuery } from '@/hooks/useMediaQuery';
 type Props = {
   children: ReactNode;
   xs?: boolean;
-  regular?: boolean
+  regular?: boolean,
+  md?: boolean
 };
 
-export const HeroButton: FC<Props> = ({children, xs, regular}) => {
+export const HeroButton: FC<Props> = ({children, xs, regular, md}) => {
   const matches = useMediaQuery('(min-width: 640px)')
   const size = (): string => {
     if(xs) {
       return 'w-[200px] h-[38px] max-sm:w-[140px] max-sm:h-[30px]'
+    } else if(md) {
+      return 'w-[300px] h-[57px] max-sm:w-[266px] max-sm:h-[50px]'
     } else {
       return 'w-[500px] h-[95px] max-sm:w-[266px] max-sm:h-[50px]'
     }
@@ -43,7 +46,7 @@ export const HeroButton: FC<Props> = ({children, xs, regular}) => {
       <div className={`inner-border absolute ${marginInnerBorder}`}></div>
       <div className="flex justify-center items-center gap-12 max-sm:gap-5">
         {children}
-        {!xs && <svg width="37" height="37" viewBox="0 0 37 37" fill="none" className='max-sm:w-[20px]' xmlns="http://www.w3.org/2000/svg">
+        {!xs && !md && <svg width="37" height="37" viewBox="0 0 37 37" fill="none" className='max-sm:w-[20px]' xmlns="http://www.w3.org/2000/svg">
           <g clip-path="url(#clip0_6964_8636)">
             <path opacity="0.4" d="M3.58065 16.7109H0V20.2916H3.58065V16.7109Z" fill="white" />
             <path opacity="0.4" d="M37.0006 16.7109H33.4199V20.2916H37.0006V16.7109Z" fill="white" />

@@ -15,7 +15,8 @@
     "react-dom": "^18.2.0",
     "react-timer-hook": "^3.0.7",
     "sass": "^1.65.1",
-    "stylelint-scss": "^5.1.0"
+    "stylelint-scss": "^5.1.0",
+    "gsap": "file:gsap-bonus.tgz"
   },
   "devDependencies": {
     "@types/node": "^20.4.10",

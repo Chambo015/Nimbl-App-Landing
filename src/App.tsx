@@ -15,13 +15,15 @@ import { SectionRoadmap } from './components/SectionRoadmap';
 import { AppFooter } from './components/AppFooter';
 import { SectionCreateUsers } from './components/SectionCreateUsers';
 import { SectionClipToLong } from './components/SectionClipToLong';
+import { ModalCommunity } from './components/ModalCommunity';
 
 function App() {
-  const [count, setCount] = useState(0);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
     <>
-      <AppHeader />
+      <AppHeader setIsModalOpen={setIsModalOpen} />
+      
       <main className="main overflow-hidden">
         <SectionHero />
         <TextTickerBlock />
@@ -38,6 +40,7 @@ function App() {
         <SectionRoadmap />
       </main>
       <AppFooter />
+     {isModalOpen && <ModalCommunity setIsModalOpen={setIsModalOpen}/>}
     </>
   );
 }
