@@ -5,8 +5,16 @@ import {TelegramIcon} from '../icons/TelegramIcon';
 import {DiscordIcon} from '../icons/DiscordIcon';
 interface Props {
   isOpen: boolean;
+  setIsInviteOpen: React.Dispatch<React.SetStateAction<boolean>>
+  setIsOpenMenuMobile: React.Dispatch<React.SetStateAction<boolean>>
 }
-export const MobileMenu: FC<Props> = ({isOpen}) => {
+export const MobileMenu: FC<Props> = ({isOpen, setIsInviteOpen, setIsOpenMenuMobile}) => {
+  const handleClick = (link: 'invite') => {
+    if(link === 'invite') {
+      setIsInviteOpen(true)
+    }
+    setIsOpenMenuMobile(false)
+  }
   return (
     <div
       className={`fixed bg-[#21193D] inset-x-0 bottom-0 top-[50px] w-screen h-[calc(100vh-50px)] transition-transform duration-200 py-7 px-5 ${
@@ -29,9 +37,9 @@ export const MobileMenu: FC<Props> = ({isOpen}) => {
           </a>
         </li>
         <li>
-          <a href="" className="py-5 inline-block">
+          <button onClick={() => {handleClick('invite')}} className="py-5 inline-block">
             <p className="font-gilroy font-medium">Invite</p>
-          </a>
+          </button>
         </li>
         <li>
           <a href="" className="py-5 inline-block">

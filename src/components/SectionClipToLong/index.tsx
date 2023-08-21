@@ -1,4 +1,3 @@
-import React from 'react'
 import { HeroButton } from '../HeroButton'
 import handImg from '@/assets/hand.png'
 

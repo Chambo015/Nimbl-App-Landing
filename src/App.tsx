@@ -16,15 +16,16 @@ import { AppFooter } from './components/AppFooter';
 import { SectionCreateUsers } from './components/SectionCreateUsers';
 import { SectionClipToLong } from './components/SectionClipToLong';
 import { ModalCommunity } from './components/ModalCommunity';
+import { InviteDashboard } from './components/InviteDashboard';
 
 function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isInviteOpen, setIsInviteOpen] = useState(false);
 
   return (
     <>
-      <AppHeader setIsModalOpen={setIsModalOpen} />
-      
-      <main className="main overflow-hidden">
+      <AppHeader setIsModalOpen={setIsModalOpen} setIsInviteOpen={setIsInviteOpen} isInviteOpen={isInviteOpen} />
+      {!isInviteOpen ? <><main className="main overflow-hidden">
         <SectionHero />
         <TextTickerBlock />
         <SectionUserData />
@@ -39,8 +40,9 @@ function App() {
         <SectionToken />
         <SectionRoadmap />
       </main>
-      <AppFooter />
+      <AppFooter /> </> : <InviteDashboard />}
      {isModalOpen && <ModalCommunity setIsModalOpen={setIsModalOpen}/>}
+     
     </>
   );
 }
