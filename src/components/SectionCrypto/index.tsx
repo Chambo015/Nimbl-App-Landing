@@ -8,7 +8,7 @@ import { HeroButton } from '../HeroButton';
 export const SectionCrypto = () => {
   return (
     <section className="bg-[#0F0722] relative max-sm:mt-5">
-      <img src={bgGradient} alt="bgGradient" className='absolute inset-0 z-0 w-full h-full' />
+      <img  src={bgGradient} alt="bgGradient" className='absolute inset-0 z-0 w-full h-full' loading="lazy" />
       <div className="container flex items-center z-10">
         <div className="flex pt-[90px] justify-between w-full max-sm:pt-5">
           <div className='flex flex-col '>
@@ -21,13 +21,13 @@ export const SectionCrypto = () => {
             </p>
            <div className='-mb-20 mt-7 hidden max-sm:block'> <HeroButton xs><p className="font-rfdewi text-xs font-bold uppercase max-sm:text-[10px] leading-none">TRY NOW</p></HeroButton></div>
             <div className='mt-auto max-sm:mt-7 gap-20 flex max-sm:items-end max-sm:gap-3 max-sm:justify-between'>
-              <img src={imgCard} alt="imgCard" className='w-[355px] max-sm:w-[163px]' />
-              <img src={imgMobileSm} alt="imgMobileSm" className='hidden max-sm:block' />
+              <img src={imgCard} alt="imgCard" className='w-[355px] max-sm:w-[163px]' loading="lazy" />
+              <img src={imgMobileSm} alt="imgMobileSm" className='hidden max-sm:block' loading="lazy" />
               <div className='max-sm:hidden'> <HeroButton xs><p className="font-rfdewi text-xs font-bold uppercase max-sm:text-[10px] leading-none">TRY NOW</p></HeroButton></div>
             </div>
           </div>
           <div>
-            <img src={imgMobile} alt="imgMobile" className='max-sm:hidden' />
+            <img src={imgMobile} alt="imgMobile" className='max-sm:hidden' loading="lazy" />
           </div>
         </div>
       </div>

@@ -15,7 +15,7 @@ export const SectionClipToLong = () => {
           </div>
         </div>
         <div className='shrink-0 max-sm:mt-5'>
-          <img src={handImg} alt="handImg" className='w-[1045px] h-[833px] object-contain max-sm:max-w-[170%] max-sm:h-auto ' />
+          <img loading="lazy" src={handImg} alt="handImg" className='w-[1045px] h-[833px] object-contain max-sm:max-w-[170%] max-sm:h-auto ' />
         </div>
       </div>
     </section>

@@ -47,7 +47,7 @@ export const HeroButton: FC<Props> = ({children, xs, regular, md, className}) =>
       <div className={`inner-border absolute ${marginInnerBorder}`}></div>
       <div className="flex justify-center items-center gap-12 max-sm:gap-5">
         {children}
-        {!xs && !md && <svg width="37" height="37" viewBox="0 0 37 37" fill="none" className='max-sm:w-[20px]' xmlns="http://www.w3.org/2000/svg">
+        {!xs && !md && !regular && <svg width="37" height="37" viewBox="0 0 37 37" fill="none" className='max-sm:w-[20px]' xmlns="http://www.w3.org/2000/svg">
           <g clip-path="url(#clip0_6964_8636)">
             <path opacity="0.4" d="M3.58065 16.7109H0V20.2916H3.58065V16.7109Z" fill="white" />
             <path opacity="0.4" d="M37.0006 16.7109H33.4199V20.2916H37.0006V16.7109Z" fill="white" />

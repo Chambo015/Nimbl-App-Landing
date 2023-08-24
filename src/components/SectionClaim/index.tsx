@@ -1,3 +1,4 @@
+import {useRef, useLayoutEffect} from 'react'
 import {WebClaimYourHandle} from '../icons/WebClaimYourHandle';
 import radarIcon from '@/assets/radar-icon.png';
 import { HeroButton } from '../HeroButton';
@@ -9,12 +10,146 @@ import user4Prime from '@/assets/user4-prime.png'
 import user3Prime from '@/assets/user3-prime.png'
 import user2Prime from '@/assets/user2-prime.png'
 import user1Prime from '@/assets/user1-prime.png'
+import {gsap} from 'gsap';
 
 export const SectionClaim = () => {
+  const refSection = useRef<HTMLElement | null>(null);
+  const refImg2 = useRef<HTMLElement | null>(null);
+  const refImg3 = useRef<HTMLElement | null>(null);
+  const refImg5 = useRef<HTMLElement | null>(null);
+  const refImg4 = useRef<HTMLElement | null>(null);
+
+  const refImg2Prime = useRef<HTMLElement | null>(null);
+  const refImg3Prime = useRef<HTMLElement | null>(null);
+  const refImg5Prime = useRef<HTMLElement | null>(null);
+  const refImg4Prime = useRef<HTMLElement | null>(null);
+
+  useLayoutEffect(() => {
+    let ctx = gsap.context(() => {
+      gsap.to(refImg2.current, {
+        // from Из этого состояния в обычное
+        scrollTrigger: {
+          // @ts-ignore
+          trigger: refImg2.current, // trigger по какому элементу отслеживать скролл
+          start: 'center 80%', // start анимации относительно триггер элемент и viewport
+          end: 'top 20%', // конец анимации относительно триггер элемента и viewport
+          scrub: 1.9, // scrub будет анимация идти в обратном порядке
+        },
+        x: 0,
+        autoAlpha: 0,
+        duration: 2,
+        force3D: true,
+      });
+      gsap.to(refImg3.current, {
+        // from Из этого состояния в обычное
+        scrollTrigger: {
+          // @ts-ignore
+          trigger: refImg3.current, // trigger по какому элементу отслеживать скролл
+          start: 'center 70%', // start анимации относительно триггер элемент и viewport
+          end: 'top 20%', // конец анимации относительно триггер элемента и viewport
+          scrub: 1.9, // scrub будет анимация идти в обратном порядке
+        },
+        x: 0,
+        autoAlpha: 0,
+        duration: 3,
+        force3D: true,
+      });
+      gsap.to(refImg4.current, {
+        // from Из этого состояния в обычное
+        scrollTrigger: {
+          // @ts-ignore
+          trigger: refImg4.current, // trigger по какому элементу отслеживать скролл
+          start: 'center 60%', // start анимации относительно триггер элемент и viewport
+          end: 'top center', // конец анимации относительно триггер элемента и viewport
+          scrub: 1.9, // scrub будет анимация идти в обратном порядке
+        },
+        x: 0,
+        autoAlpha: 0,
+        duration: 4,
+        force3D: true,
+      });
+      gsap.to(refImg5.current, {
+        // from Из этого состояния в обычное
+        scrollTrigger: {
+          // @ts-ignore
+          trigger: refImg5.current, // trigger по какому элементу отслеживать скролл
+          start: 'center 50%', // start анимации относительно триггер элемент и viewport
+          end: 'top 40%', // конец анимации относительно триггер элемента и viewport
+          scrub: 1.9, // scrub будет анимация идти в обратном порядке
+        },
+        x: 0,
+        autoAlpha: 0,
+        duration: 5,
+        force3D: true,
+      });
+
+      gsap.from(refImg2Prime.current, {
+        // from Из этого состояния в обычное
+        scrollTrigger: {
+          // @ts-ignore
+          trigger: refImg2.current, // trigger по какому элементу отслеживать скролл
+          start: 'center 80%', // start анимации относительно триггер элемент и viewport
+          end: 'top 20%', // конец анимации относительно триггер элемента и viewport
+          scrub: 1.9, // scrub будет анимация идти в обратном порядке
+        },
+        x: 0,
+        autoAlpha: 0,
+        duration: 2,
+        force3D: true,
+      });
+      gsap.from(refImg3Prime.current, {
+        // from Из этого состояния в обычное
+        scrollTrigger: {
+          // @ts-ignore
+          trigger: refImg3.current, // trigger по какому элементу отслеживать скролл
+          start: 'center 70%', // start анимации относительно триггер элемент и viewport
+          end: 'top 20%', // конец анимации относительно триггер элемента и viewport
+          scrub: 1.9, // scrub будет анимация идти в обратном порядке
+        },
+        x: 0,
+        autoAlpha: 0,
+        duration: 3,
+        force3D: true,
+      });
+      gsap.from(refImg4Prime.current, {
+        // from Из этого состояния в обычное
+        scrollTrigger: {
+          // @ts-ignore
+          trigger: refImg4.current, // trigger по какому элементу отслеживать скролл
+          start: 'center 60%', // start анимации относительно триггер элемент и viewport
+          end: 'top center', // конец анимации относительно триггер элемента и viewport
+          scrub: 1.9, // scrub будет анимация идти в обратном порядке
+        },
+        x: 0,
+        autoAlpha: 0,
+        duration: 4,
+        force3D: true,
+      });
+      gsap.from(refImg5Prime.current, {
+        // from Из этого состояния в обычное
+        scrollTrigger: {
+          // @ts-ignore
+          trigger: refImg5.current, // trigger по какому элементу отслеживать скролл
+          start: 'center 50%', // start анимации относительно триггер элемент и viewport
+          end: 'top 40%', // конец анимации относительно триггер элемента и viewport
+          scrub: 1.9, // scrub будет анимация идти в обратном порядке
+        },
+        x: 0,
+        autoAlpha: 0,
+        duration: 5,
+        force3D: true,
+      });
+      
+    }, refSection); // <- IMPORTANT! Scopes selector text
+    
+    return () => ctx.revert(); // cleanup
+    
+  }, []); 
   return (
-    <section className="relative flex justify-center">
+    <section ref={refSection} className="relative flex justify-center">
       <div><WebClaimYourHandle /></div>
       <img
+      loading="lazy"
         src={radarIcon}
         alt="radarIcon"
         className="w-[112px] h-[112px] absolute left-1/2 -translate-x-1/2 bottom-[30%] max-sm:w-[54px] max-sm:h-[54px] max-sm:bottom-[28%]"
@@ -25,36 +160,36 @@ export const SectionClaim = () => {
           <p className="font-rfdewi text-2xl font-bold max-sm:text-sm">DOWNLOAD APP</p>
         </HeroButton>
       </div>
-      <div className='bg-[#20133E] pb-3 px-[5px] absolute left-[50%] -translate-x-[850px] top-[30%] rounded-md pt-7 max-sm:-translate-x-[100px] max-sm:top-[58%] max-sm:pt-2 max-sm:pb-1'>
-        <img src={user1} alt="user1" className='absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 max-sm:w-8 max-sm:h-8' />
+      <div ref={refImg5} className='bg-[#20133E] pb-3 px-[5px] absolute left-[50%] -translate-x-[850px] top-[30%] rounded-md pt-7 max-sm:-translate-x-[100px] max-sm:top-[58%] max-sm:pt-2 max-sm:pb-1'>
+        <img loading="lazy" src={user1} alt="user1" className='absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 max-sm:w-8 max-sm:h-8' />
         <p className='text-white/50 text-xl font-gilroy font-medium max-sm:text-[8px]'>@diasnkteam</p>
       </div>
-      <div className='bg-[#20133E] pb-3 px-[7px] absolute left-[50%] -translate-x-[700px]  top-[50%] rounded-md pt-7'>
-        <img src={user2} alt="user2" className='absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 max-sm:w-5 max-sm:h-5' />
+      <div ref={refImg4} className='bg-[#20133E] pb-3 px-[7px] absolute left-[50%] -translate-x-[700px]  top-[50%] rounded-md pt-7'>
+        <img loading="lazy" src={user2} alt="user2" className='absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 max-sm:w-5 max-sm:h-5' />
         <p className='text-white/50 text-xl font-gilroy font-medium max-sm:text-[8px]'>@adilkhan.r</p>
       </div>
-      <div className='bg-[#20133E] pb-3 px-[7px] absolute left-[50%] -translate-x-[500px] top-[65%] rounded-md pt-7'>
-        <img src={user3} alt="user3" className='absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 max-sm:w-5 max-sm:h-5' />
+      <div ref={refImg3} className='bg-[#20133E] pb-3 px-[7px] absolute left-[50%] -translate-x-[500px] top-[65%] rounded-md pt-7'>
+        <img loading="lazy" src={user3} alt="user3" className='absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 max-sm:w-5 max-sm:h-5' />
         <p className='text-white/50 text-xl font-gilroy font-medium max-sm:text-[8px]'>@kairkuka</p>
       </div>
-      <div className='bg-[#20133E] pb-3 px-[7px] absolute left-[50%] -translate-x-[250px] top-[60%] rounded-md pt-7 max-sm:-translate-x-[180px] max-sm:top-[60%] max-sm:pt-2 max-sm:pb-1'>
-        <img src={user4} alt="user4" className='absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 max-sm:w-8 max-sm:h-8' />
+      <div ref={refImg2} className='bg-[#20133E] pb-3 px-[7px] absolute left-[50%] -translate-x-[250px] top-[60%] rounded-md pt-7 max-sm:-translate-x-[180px] max-sm:top-[60%] max-sm:pt-2 max-sm:pb-1'>
+        <img loading="lazy" src={user4} alt="user4" className='absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 max-sm:w-8 max-sm:h-8' />
         <p className='text-white/50 text-xl font-gilroy font-medium max-sm:text-[8px]'>@buman</p>
       </div>
-      <div className='bg-[#20133E] pb-3 px-[7px] absolute right-[50%] translate-x-[850px]  top-[40%] rounded-md pt-7 max-sm:translate-x-[180px] max-sm:top-[61%] max-sm:pt-2 max-sm:pb-1'>
-        <img src={user4Prime} alt="user4Prime" className='absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 max-sm:w-8 max-sm:h-8' />
+      <div ref={refImg5Prime} className='bg-[#20133E] pb-3 px-[7px] absolute right-[50%] translate-x-[850px]  top-[40%] rounded-md pt-7 max-sm:translate-x-[180px] max-sm:top-[61%] max-sm:pt-2 max-sm:pb-1'>
+        <img loading="lazy" src={user4Prime} alt="user4Prime" className='absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 max-sm:w-8 max-sm:h-8' />
         <p className='text-white text-xl font-gilroy font-medium max-sm:text-[8px]'>@buman</p>
       </div>
-      <div className='bg-[#20133E] pb-3 px-[7px] absolute right-[50%] translate-x-[700px]  top-[55%] rounded-md pt-7'>
-        <img src={user3Prime} alt="user3Prime" className='absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 max-sm:w-5 max-sm:h-5' />
+      <div ref={refImg4Prime} className='bg-[#20133E] pb-3 px-[7px] absolute right-[50%] translate-x-[700px]  top-[55%] rounded-md pt-7'>
+        <img loading="lazy" src={user3Prime} alt="user3Prime" className='absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 max-sm:w-5 max-sm:h-5' />
         <p className='text-white text-xl font-gilroy font-medium max-sm:text-[8px]'>@kairkuka</p>
       </div>
-      <div className='bg-[#20133E] pb-3 px-[7px] absolute right-[50%] translate-x-[450px]  top-[65%] rounded-md pt-7'>
-        <img src={user2Prime} alt="user2Prime" className='absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 max-sm:w-5 max-sm:h-5' />
+      <div ref={refImg3Prime} className='bg-[#20133E] pb-3 px-[7px] absolute right-[50%] translate-x-[450px]  top-[65%] rounded-md pt-7'>
+        <img loading="lazy" src={user2Prime} alt="user2Prime" className='absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 max-sm:w-5 max-sm:h-5' />
         <p className='text-white text-xl font-gilroy font-medium max-sm:text-[8px]'>@adilkhan.r</p>
       </div>
-      <div className='bg-[#20133E] pb-3 px-[7px] absolute right-[50%] translate-x-[250px]  top-[62%] rounded-md pt-7 max-sm:translate-x-[100px] max-sm:top-[54%] max-sm:pt-2 max-sm:pb-1'>
-        <img src={user1Prime} alt="user1Prime" className='absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 max-sm:w-8 max-sm:h-8' />
+      <div ref={refImg2Prime} className='bg-[#20133E] pb-3 px-[7px] absolute right-[50%] translate-x-[250px]  top-[62%] rounded-md pt-7 max-sm:translate-x-[100px] max-sm:top-[54%] max-sm:pt-2 max-sm:pb-1'>
+        <img loading="lazy" src={user1Prime} alt="user1Prime" className='absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 max-sm:w-8 max-sm:h-8' />
         <p className='text-white text-xl font-gilroy font-medium max-sm:text-[8px]'>@diasnkteam</p>
       </div>
     </section>

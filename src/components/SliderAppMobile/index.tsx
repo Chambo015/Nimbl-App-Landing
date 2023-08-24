@@ -1,4 +1,4 @@
-import {useState} from 'react';
+import {useEffect, useRef, useState} from 'react';
 import './styles.scss';
 import {useKeenSlider} from 'keen-slider/react';
 import 'keen-slider/keen-slider.min.css';
@@ -8,6 +8,9 @@ import screen3 from '@/assets/app-screens/screen-3.png';
 import screen4 from '@/assets/app-screens/screen-4.png';
 import screen5 from '@/assets/app-screens/screen-5.png';
 import { useMediaQuery } from '@/hooks/useMediaQuery';
+import { gsap } from "gsap";
+
+const styleActiveEl = '!w-[324px] h-[610px] max-sm:w-[225px] max-sm:h-[400px]'
 
 export const SliderAppMobile = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -54,31 +57,32 @@ export const SliderAppMobile = () => {
       slider.on("updated", nextTimeout)
     },
   ]);
+
   return (
-    <div ref={ref} className="keen-slider !w-[1530px] max-sm:!w-full items-center relative mx-auto ">
+    <div ref={ref}  className="keen-slider !w-[1530px] max-sm:!w-full items-center relative mx-auto z-10 ">
       <div className={`keen-slider__slide items-center flex shrink-0 justify-center     ${
-          currentSlide === 0 ? '!w-[314px] h-[586px] max-sm:w-[204px] max-sm:h-[380px]' : 'h-[492px] !w-[264px] max-sm:w-[172px] max-sm:h-[320px]'
+          currentSlide === 0 ? styleActiveEl : 'h-[492px] !w-[264px] max-sm:w-[172px] max-sm:h-[320px]'
         }`}>
         <img src={screen1} alt="screen1" className={currentSlide === 0 ? 'w-[314px] max-sm:w-[204px]' : 'w-[264px] max-sm:w-[172px]'} />
       </div>
-      <div
+      <div  
         className={`keen-slider__slide  items-center flex shrink-0 justify-center  ${
-          currentSlide === 1 ? '!w-[314px] h-[586px] max-sm:w-[204px] max-sm:h-[380px]' : 'h-[492px] max-sm:w-[172px] max-sm:h-[320px] !w-[264px]'
+          currentSlide === 1 ? styleActiveEl : 'h-[492px] max-sm:w-[172px] max-sm:h-[320px] !w-[264px]'
         }`}>
         <img src={screen2} alt="screen2"  className={currentSlide === 1 ? 'w-[314px] max-sm:w-[204px]' : 'w-[264px] max-sm:w-[172px]'} />
       </div>
       <div className={`keen-slider__slide  items-center flex shrink-0 justify-center    ${
-          currentSlide === 2 ? '!w-[314px] h-[586px] max-sm:w-[204px] max-sm:h-[380px]' : 'h-[492px] max-sm:w-[172px] max-sm:h-[320px] !w-[264px]'
+          currentSlide === 2 ? styleActiveEl : 'h-[492px] max-sm:w-[172px] max-sm:h-[320px] !w-[264px]'
         }`}>
         <img src={screen3} alt="screen3"  className={currentSlide === 2 ? 'w-[314px] max-sm:w-[204px]' : 'w-[264px] max-sm:w-[172px]'} />
       </div>
       <div className={`keen-slider__slide  items-center flex shrink-0 justify-center    ${
-          currentSlide === 3 ? '!w-[314px] h-[586px] max-sm:w-[204px] max-sm:h-[380px]' : 'h-[492px] max-sm:w-[172px] max-sm:h-[320px] !w-[264px]'
+          currentSlide === 3 ? styleActiveEl : 'h-[492px] max-sm:w-[172px] max-sm:h-[320px] !w-[264px]'
         }`}>
         <img src={screen4} alt="screen4"  className={currentSlide === 3 ? 'w-[314px] max-sm:w-[204px]' : 'w-[264px] max-sm:w-[172px]'} />
       </div>
       <div className={`keen-slider__slide  items-center flex shrink-0 justify-center    ${
-          currentSlide === 4 ? '!w-[314px] h-[586px] max-sm:w-[204px] max-sm:h-[380px]' : 'h-[492px] max-sm:w-[172px] max-sm:h-[320px] !w-[264px]'
+          currentSlide === 4 ? styleActiveEl : 'h-[492px] max-sm:w-[172px] max-sm:h-[320px] !w-[264px]'
         }`}>
         <img src={screen5} alt="screen5"  className={currentSlide === 4 ? 'w-[314px] max-sm:w-[204px]' : 'w-[264px] max-sm:w-[172px]'}/>
       </div>

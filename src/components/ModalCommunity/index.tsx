@@ -18,7 +18,7 @@ export const ModalCommunity: FC<Props> = ({setIsModalOpen}) => {
             <HeroButton regular md><p className="font-gilroy text-2xl leading-none font-medium ">X/Twitter</p></HeroButton>
             <HeroButton regular md><p className="font-gilroy text-2xl leading-none font-medium ">Telegram</p></HeroButton>
             </div>
-            <img src={imgMobile} alt="imgMobile" className='absolute bottom-0 right-[17px] h-full z-10' />
+            <img loading="lazy" src={imgMobile} alt="imgMobile" className='absolute bottom-0 right-[17px] h-full z-10' />
         </div>
     </div>
   )

@@ -27,7 +27,7 @@ export const SectionGridAI = () => {
               Effortless content discovery powered by our AI's deep understanding of video narratives
             </p>
             <div className="mt-10">
-              <img src={imgMobileGpt} alt="imgMobileGpt" className="w-[290px] object-contain mx-auto" />
+              <img loading="lazy" src={imgMobileGpt} alt="imgMobileGpt" className="w-[290px] object-contain mx-auto" />
             </div>
           </div>
           <div className="bg-[#20133E] pt-5 flex flex-col">
@@ -39,21 +39,21 @@ export const SectionGridAI = () => {
                 into 40 languages
               </h3>
               <div className="flex gap-5 justify-around mt-9">
-                <img src={iconUK} alt="iconUK" />
-                <img src={iconChina} alt="iconChina" />
-                <img src={iconFrance} alt="iconFrance" />
-                <img src={iconGermany} alt="iconGermany" />
-                <img src={iconIndia} alt="iconIndia" />
-                <img src={iconItaly} alt="iconItaly" className='max-sm:hidden'/>
-                <img src={iconKorea} alt="iconKorea" className='max-sm:hidden'/>
-                <img src={iconSweden} alt="iconSweden" className='max-sm:hidden'/>
-                <img src={iconSwitzerland} alt="iconSwitzerland" />
-                <img src={iconUS} alt="iconUS" />
-                <img src={iconTurkey} alt="iconTurkey" />
+                <img loading="lazy" src={iconUK} alt="iconUK" />
+                <img loading="lazy" src={iconChina} alt="iconChina" />
+                <img loading="lazy" src={iconFrance} alt="iconFrance" />
+                <img loading="lazy" src={iconGermany} alt="iconGermany" />
+                <img loading="lazy" src={iconIndia} alt="iconIndia" />
+                <img loading="lazy" src={iconItaly} alt="iconItaly" className='max-sm:hidden'/>
+                <img loading="lazy" src={iconKorea} alt="iconKorea" className='max-sm:hidden'/>
+                <img loading="lazy" src={iconSweden} alt="iconSweden" className='max-sm:hidden'/>
+                <img loading="lazy" src={iconSwitzerland} alt="iconSwitzerland" />
+                <img loading="lazy" src={iconUS} alt="iconUS" />
+                <img loading="lazy" src={iconTurkey} alt="iconTurkey" />
               </div>
             </div>
             <div className="pt-10 mt-auto">
-              <img src={imglaunguages} alt="imgMobileGpt" className="w-full h-[260px] object-cover" />
+              <img loading="lazy" src={imglaunguages} alt="imgMobileGpt" className="w-full h-[260px] object-cover" />
             </div>
           </div>
           <div className="bg-[#20133E] pt-5 px-10">
@@ -83,7 +83,7 @@ export const SectionGridAI = () => {
             Fine-tune / tailor your feed for mindful content consumption
             </p>
             <div className='my-auto pt-9 max-sm:pt-4 max-sm:pb-4'>
-                <img src={imgFeed} alt="imgFeed" className='w-full object-contain' />
+                <img loading="lazy" src={imgFeed} alt="imgFeed" className='w-full object-contain' />
             </div>
           </div>
         </div>
