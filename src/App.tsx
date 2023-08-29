@@ -41,9 +41,8 @@ function App() {
   }, [])
 
   return (
-    <>
+    <> <AppHeader setIsModalOpen={setIsModalOpen} setIsInviteOpen={setIsInviteOpen} isInviteOpen={isInviteOpen} />
       <div id="luxy" className='bg-[#0F0722]'>
-        <AppHeader setIsModalOpen={setIsModalOpen} setIsInviteOpen={setIsInviteOpen} isInviteOpen={isInviteOpen} />
         {!isInviteOpen ? <><main  className="main overflow-hidden">
           <SectionHero />
           <SectionIntroducingStakes />

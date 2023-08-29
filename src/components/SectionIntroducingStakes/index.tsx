@@ -13,17 +13,17 @@ export const SectionIntroducingStakes = () => {
     <section className='pt-[200px]'>
         <div className='container'>
             <h2 className='bg-gradient-to-b from-white to-white/50 text-transparent bg-clip-text text-[50px] leading-none font-black uppercase font-rfdewi max-sm:text-2xl text-center'>Introducing Stakes</h2>
-            <p className='font-gilroy text-[28px] leading-tight text-center mt-8'>Join the next generation of social engagement with Stakes,  a platform that intertwines community interaction with the excitement of owning stakes in your favorite groups and influencers.</p>
+            <p className='font-gilroy text-[28px] leading-tight text-center mt-8 max-sm:text-base'>Join the next generation of social engagement with Stakes,  a platform that intertwines community interaction with the excitement of owning stakes in your favorite groups and influencers.</p>
         </div>
       <div className='flex justify-center mt-28'>
         <div className='relative'><ChartBackground />
         <div className='absolute top-[5%] left-0 w-full'><ChartLine1 /></div>
         <div className='absolute top-0 left-0 w-full'><ChartLine2 />
-        <img src={userImg3} alt="user_chart" className='absolute left-[53%] top-[3%] z-20 w-[110px] h-[110px]' loading='lazy' /></div>
+        <img src={userImg3} alt="user_chart" className='absolute left-[53%] top-[3%] z-20 w-[110px] h-[110px] max-sm:w-[60px] max-sm:h-[60px] max-sm:top-[5%]' loading='lazy' /></div>
         <div className='absolute top-0 left-0 w-full'><ChartLine3 />
-        <img src={userImg1} alt="user_chart" className='absolute left-[28%] top-[10%] z-20 w-[110px] h-[110px]' loading='lazy' /></div>
+        <img src={userImg1} alt="user_chart" className='absolute left-[28%] top-[10%] z-20 w-[110px] h-[110px] max-sm:w-[60px] max-sm:h-[60px] max-sm:top-[12%] max-sm:left-[40%]' loading='lazy' /></div>
         <div className='absolute top-0 left-0 w-full'><ChartLine4 />
-        <img src={userImg2} alt="user_chart" className='absolute left-[68%] top-[25%] z-20 w-[110px] h-[110px]' loading='lazy' /></div>
+        <img src={userImg2} alt="user_chart" className='absolute left-[68%] top-[25%] z-20 w-[110px] h-[110px] max-sm:w-[60px] max-sm:h-[60px] max-sm:top-[32%] max-sm:left-[52%]' loading='lazy' /></div>
         </div>
       </div>
       <div className='flex justify-center gap-6 h-[150px] mt-8'>
