@@ -10,9 +10,10 @@ type Props = {
   regular?: boolean,
   md?: boolean,
   className?: React.HTMLAttributes<HTMLElement> | string
+  onClick?: () => void
 };
 
-export const HeroButton: FC<Props> = ({children, xs, regular, md, className}) => {
+export const HeroButton: FC<Props> = ({children, xs, regular, md, className, onClick}) => {
   const matches = useMediaQuery('(min-width: 640px)')
   const size = (): string => {
     if(xs) {
@@ -42,7 +43,7 @@ export const HeroButton: FC<Props> = ({children, xs, regular, md, className}) =>
   }, [xs, matches, regular])
 
   return (
-    <button style={{'--rb': radiusBorder}} className={`${!regular && 'wrap'} ${size()} relative ${className}`}>
+    <button onClick={onClick} style={{'--rb': radiusBorder}} className={`${!regular && 'wrap'} ${size()} relative ${className}`}>
       {!regular && <img src={imgBg} alt="imgBg" className="absolute left-0 top-0 w-full object-cover mix-blend-color-burn h-full" />}
       <div className={`inner-border absolute ${marginInnerBorder}`}></div>
       <div className="flex justify-center items-center gap-12 max-sm:gap-5">

@@ -1,7 +1,10 @@
 import { HeroButton } from '../HeroButton'
 import handImg from '@/assets/hand.png'
+import ReactPlayer from 'react-player'
 
-export const SectionClipToLong = () => {
+
+
+export const SectionClipToLong  = () => {
   return (
     <section className='pt-40'>
       <div className='container flex items-center max-sm:flex-col'>
@@ -14,8 +17,11 @@ export const SectionClipToLong = () => {
           </HeroButton>
           </div>
         </div>
-        <div className='shrink-0 max-sm:mt-5'>
+        <div className='shrink-0 max-sm:mt-5 relative'>
           <img loading="lazy" src={handImg} alt="handImg" className='w-[1045px] h-[833px] object-contain max-sm:max-w-[170%] max-sm:h-auto ' />
+          <div className='absolute w-[32%] z-20 h-[85%] top-[7%] left-[12%] rounded-3xl overflow-hidden'>
+          <ReactPlayer width="360" height="640" muted  loop playing url='https://d2n3zca7e0phmo.cloudfront.net/lv_0_20230824191446.mp4' />
+          </div>
         </div>
       </div>
     </section>

@@ -1,11 +1,14 @@
-import React from 'react';
+import {FC} from 'react';
 import imgMobile from '@/assets/Screen_crypto.png'
 import imgMobileSm from '@/assets/Screen_crypto-sm.png'
 import bgGradient from '@/assets/gradient-background-crypto.png'
 import imgCard from '@/assets/business-card.png'
 import { HeroButton } from '../HeroButton';
+interface Props {
+  openModalVideo: () => void
+}
 
-export const SectionCrypto = () => {
+export const SectionCrypto: FC<Props> = ({openModalVideo}) => {
   return (
     <section className="bg-[#0F0722] relative max-sm:mt-5">
       <img  src={bgGradient} alt="bgGradient" className='absolute inset-0 z-0 w-full h-full' loading="lazy" />
@@ -23,7 +26,7 @@ export const SectionCrypto = () => {
             <div className='mt-auto max-sm:mt-7 gap-20 flex max-sm:items-end max-sm:gap-3 max-sm:justify-between'>
               <img src={imgCard} alt="imgCard" className='w-[355px] max-sm:w-[163px]' loading="lazy" />
               <img src={imgMobileSm} alt="imgMobileSm" className='hidden max-sm:block' loading="lazy" />
-              <div className='max-sm:hidden'> <HeroButton xs><p className="font-rfdewi text-xs font-bold uppercase max-sm:text-[10px] leading-none">TRY NOW</p></HeroButton></div>
+              <div className='max-sm:hidden'> <HeroButton onClick={openModalVideo} xs><p className="font-rfdewi text-xs font-bold uppercase max-sm:text-[10px] leading-none">See it in Action</p></HeroButton></div>
             </div>
           </div>
           <div>
