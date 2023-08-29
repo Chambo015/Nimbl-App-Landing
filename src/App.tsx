@@ -17,6 +17,8 @@ import { SectionCreateUsers } from './components/SectionCreateUsers';
 import { SectionClipToLong } from './components/SectionClipToLong';
 import { ModalCommunity } from './components/ModalCommunity';
 import { InviteDashboard } from './components/InviteDashboard';
+import { ModalWithVideo } from './components/ModalWithVideo';
+import { SectionIntroducingStakes } from './components/SectionIntroducingStakes';
 import {gsap} from 'gsap'
 import {ScrollTrigger} from 'gsap/ScrollTrigger'
 
@@ -26,7 +28,7 @@ gsap.config({
   });
 // @ts-ignore
 import Luxy from 'luxy.js'
-import { ModalWithVideo } from './components/ModalWithVideo';
+
 
 
 function App() {
@@ -44,6 +46,7 @@ function App() {
         <AppHeader setIsModalOpen={setIsModalOpen} setIsInviteOpen={setIsInviteOpen} isInviteOpen={isInviteOpen} />
         {!isInviteOpen ? <><main  className="main overflow-hidden">
           <SectionHero />
+          <SectionIntroducingStakes />
           <TextTickerBlock />
           <SectionUserData />
           <SectionModeration />
