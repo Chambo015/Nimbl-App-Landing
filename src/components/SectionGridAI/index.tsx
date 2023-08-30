@@ -1,7 +1,10 @@
 import React from 'react';
 import imgMobileGpt from '@/assets/ai-gpt-mobile.png';
+import imgMobileGptWebp from '@/assets/ai-gpt-mobile.webp';
 import imglaunguages from '@/assets/ai-launguages.png';
+import imglaunguagesWebp from '@/assets/ai-launguages.webp';
 import imgFeed from '@/assets/feed-ai.png';
+import imgFeedWebp from '@/assets/feed-ai.webp';
 import iconUK from '@/assets/UK.png';
 import iconChina from '@/assets/China.png';
 import iconFrance from '@/assets/France.png';
@@ -27,7 +30,7 @@ export const SectionGridAI = () => {
               Effortless content discovery powered by our AI's deep understanding of video narratives
             </p>
             <div className="mt-10">
-              <img loading="lazy" src={imgMobileGpt} alt="imgMobileGpt" className="w-[290px] object-contain mx-auto" />
+              <picture><source srcSet={imgMobileGptWebp} type="image/webp" /><img loading="lazy" src={imgMobileGpt} alt="imgMobileGpt" className="w-[290px] object-contain mx-auto" /></picture>
             </div>
           </div>
           <div className="bg-[#20133E] pt-5 flex flex-col">
@@ -53,7 +56,7 @@ export const SectionGridAI = () => {
               </div>
             </div>
             <div className="pt-10 mt-auto">
-              <img loading="lazy" src={imglaunguages} alt="imgMobileGpt" className="w-full h-[260px] object-cover" />
+             <picture><source srcSet={imglaunguagesWebp} type="image/webp" /><img loading="lazy" src={imglaunguages} alt="imgMobileGpt" className="w-full h-[260px] object-cover" /></picture>
             </div>
           </div>
           <div className="bg-[#20133E] pt-5 px-10">
@@ -83,7 +86,7 @@ export const SectionGridAI = () => {
             Fine-tune / tailor your feed for mindful content consumption
             </p>
             <div className='my-auto pt-9 max-sm:pt-4 max-sm:pb-4'>
-                <img loading="lazy" src={imgFeed} alt="imgFeed" className='w-full object-contain' />
+                <picture><source srcSet={imgFeedWebp} type="image/webp" /><img loading="lazy" src={imgFeed} alt="imgFeed" className='w-full object-contain' /></picture>
             </div>
           </div>
         </div>

@@ -22,7 +22,7 @@
   justify-content: center;
   perspective: 1000px;
   transform-style: preserve-3d;
-  height: 16%;
+  height: 25%;
   width: 100%;
 }
 
@@ -70,10 +70,15 @@
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
   display: flex;
-  font-size: 20px;
-  font-weight: 400;
   height: 100%;
   width: 100%;
   position: absolute;
+  justify-content: center;
+}
+
+.wheel--perspective-right .wheel__slide {
   justify-content: flex-end;
+}
+.wheel--perspective-left .wheel__slide  {
+  justify-content: flex-start
 }

@@ -1,5 +1,7 @@
 import imgEarth from '@/assets/planet-nimbl.png';
 import imgEarthSm from '@/assets/planet-nimbl-sm.png';
+import imgEarthWebp from '@/assets/planet-nimbl.webp';
+import imgEarthSmWebp from '@/assets/planet-nimbl-sm.webp';
 import stake from '@/assets/stake.png';
 import transfer from '@/assets/transfer.png';
 import cursor from '@/assets/cursor.png';
@@ -17,7 +19,7 @@ export const SectionToken = () => {
         $NIMBL is a utility token that acts as the platform currency
       </p>
       <div className="flex h-[1000px] relative max-sm:h-auto max-sm:flex-col">
-        <img src={imgEarth} alt="imgEarth" className="ml-auto absolute right-0 -top-[100px] max-sm:hidden" />
+       <picture><source srcSet={imgEarthWebp} type="image/webp" /><img src={imgEarth} alt="imgEarth" className="ml-auto absolute right-0 -top-[100px] max-sm:hidden" /></picture>
         <img src={starShips} alt="starShips" className='w-[380px] absolute left-1/2 top-[30%] -translate-x-1/2 max-sm:hidden' />
         <div className='container 2xl:max-w-[1600px] mx-auto'>
             <div className='mt-28 max-sm:mt-8'>
@@ -44,7 +46,7 @@ export const SectionToken = () => {
             </div>
         </div>
         <div className='hidden max-sm:block'>
-          <img src={imgEarthSm} alt="imgEarthSm" className='w-full' />
+         <picture><source srcSet={imgEarthSmWebp} type="image/webp" /><img src={imgEarthSm} alt="imgEarthSm" className='w-full' /></picture>
         </div>
       </div>
     </section>

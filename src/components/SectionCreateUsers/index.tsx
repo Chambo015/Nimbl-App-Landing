@@ -1,5 +1,6 @@
 import React from 'react';
 import levelXP from '@/assets/levelXP.png';
+import levelXPWebp from '@/assets/levelXP.webp';
 import imgGroup from '@/assets/GroupCreators.png';
 import {creater1, creater10, creater11, creater12, creater13, creater14, creater15, creater16, creater17, creater18, creater2, creater3, creater4, creater5, creater6, creater7, creater8, creater9} from '@/assets/creaters';
 import imgCoin from '@/assets/coin.png'
@@ -16,7 +17,7 @@ export const SectionCreateUsers = () => {
           </div>
           <div className="bg-[rgba(51,51,51,.5)] font-TTOctos text-[28px] leading-none text-center py-2 max-sm:text-lg">10</div>
         </div>
-        <img loading="lazy" src={levelXP} alt="levelXP"  className='max-sm:h-[95px]'/>
+       <picture><source srcSet={levelXPWebp} type="image/webp" /><img loading="lazy" src={levelXP} alt="levelXP"  className='max-sm:h-[95px]'/></picture>
       </div>
       <div className="[clip-path:polygon(25%_0,75%_0,100%_50%,100%_100%,0_100%,0%_50%)] max-sm:[clip-path:polygon(40%_0,60%_0,100%_20%,100%_100%,0_100%,0%_20%)] flex flex-col items-center pt-[120px] bg-[#20133E] w-full h-[570px] relative overflow-visible max-sm:h-[500px]">
         <h2 className="bg-gradient-to-b from-white to-white/50 text-transparent bg-clip-text text-center mx-auto w-[590px] text-5xl font-rfdewi font-black uppercase max-sm:text-2xl max-sm:w-[80%]">
@@ -27,7 +28,6 @@ export const SectionCreateUsers = () => {
           and users
         </p>
         <img loading="lazy" src={imgGroup} alt="imgGroup" className="w-[400px] mt-auto max-sm:w-[90%]" />
-
         <img loading="lazy" src={creater1} alt="creator1" className='w-[80px] h-[80px] max-sm:w-[30px] max-sm:h-[30px] absolute left-[20%] top-[10%] z-20'/>
         <img loading="lazy" src={creater2} alt="creator2" className='w-[80px] h-[80px] max-sm:w-[30px] max-sm:h-[30px] absolute left-[13%] top-[20%] z-20  max-sm:left-[5%] max-sm:top-[18%]'/>
         <img loading="lazy" src={creater3} alt="creator3" className='w-[80px] h-[80px] max-sm:w-[30px] max-sm:h-[30px] absolute left-[30%] top-[8%] z-20 '/>

@@ -28,6 +28,7 @@ gsap.config({
   });
 // @ts-ignore
 import Luxy from 'luxy.js'
+import { SectionChannelsTokenized } from './components/SectionChannelsTokenized';
 
 
 
@@ -46,6 +47,7 @@ function App() {
         {!isInviteOpen ? <><main  className="main overflow-hidden">
           <SectionHero />
           <SectionIntroducingStakes />
+          <SectionChannelsTokenized />
           <TextTickerBlock />
           <SectionUserData />
           <SectionModeration />

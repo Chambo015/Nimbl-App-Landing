@@ -1,6 +1,8 @@
 import React from 'react';
 import radarImg from '@/assets/bg-radar.png';
+import radarImgWebp from '@/assets/bg-radar.webp';
 import radarIcon from '@/assets/radar-icon.png';
+import radarIconWebp from '@/assets/radar-icon.webp';
 import {BlockIcon} from '../icons/BlockIcon';
 import {SearchIcon} from '../icons/SearchIcon';
 import {UserSearchIcon} from '../icons/UserSearchIcon';
@@ -11,7 +13,10 @@ export const SectionModeration = () => {
     <section className="pt-36">
       <div className="container relative">
         <div className="relative overflow-hidden rounded-tl-[1000px] rounded-tr-[1000px]">
-          <img src={radarImg} alt="radarImg" className="w-full object-contain mix-blend-lighten" />
+          <picture>
+            <source srcSet={radarImgWebp} type="image/webp" />
+            <img src={radarImg} alt="radarImg" className="w-full object-contain mix-blend-lighten" />
+          </picture>
           <div></div>
           <div className="scanner"></div>
           <ul className="scanner_points">
@@ -23,11 +28,14 @@ export const SectionModeration = () => {
             <li></li>
           </ul>
         </div>
-        <img
-          src={radarIcon}
-          alt="radarIcon"
-          className="w-[112px] h-[112px] max-sm:w-[54px] max-sm:h-[54px] max-sm:-mt-[30px] mx-auto -mt-[56px] z-10 relative"
-        />
+        <picture>
+          <source srcSet={radarIconWebp} type="image/webp" />
+          <img
+            src={radarIcon}
+            alt="radarIcon"
+            className="w-[112px] h-[112px] max-sm:w-[54px] max-sm:h-[54px] max-sm:-mt-[30px] mx-auto -mt-[56px] z-10 relative"
+          />
+        </picture>
         <h2 className="bg-gradient-to-b from-white to-white/50 text-transparent bg-clip-text text-center mt-7 text-5xl font-rfdewi font-black uppercase max-sm:text-2xl max-sm:mt-2">
           Redefining Moderation with Transparent AI
         </h2>

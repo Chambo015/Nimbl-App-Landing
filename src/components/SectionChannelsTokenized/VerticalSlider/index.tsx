@@ -5,6 +5,32 @@ import {
   useKeenSlider,
 } from "keen-slider/react"
 import './styles.scss'
+import { useMediaQuery } from '@/hooks/useMediaQuery'
+
+const sliderText = ['Tokengated Communities', 'The Content', 'Channel Growth', 'Alpha Content', 'Giveaways', 'Alpha Calls/Private content', 'Tokengated Communities', 'The Content', 'Channel Growth', 'Alpha Content', 'Giveaways', 'Alpha Calls/Private content']
+
+const autoSwitch =  [
+  (slider) => {
+    let timeout: ReturnType<typeof setTimeout>
+    let mouseOver = false
+    function clearNextTimeout() {
+      clearTimeout(timeout)
+    }
+    function nextTimeout() {
+      clearTimeout(timeout)
+      if (mouseOver) return
+      timeout = setTimeout(() => {
+        slider.next()
+      }, 1000)
+    }
+    slider.on("created", () => {
+      nextTimeout()
+    })
+    slider.on("dragStarted", clearNextTimeout)
+    slider.on("animationEnded", nextTimeout)
+    slider.on("updated", nextTimeout)
+  },
+]
 
 export default function VerticalSlider(props: {
   initIdx?: number
@@ -15,8 +41,9 @@ export default function VerticalSlider(props: {
   setValue?: (relative: number, absolute: number) => string
   width: number
 }) {
+  const matches = useMediaQuery('(min-width: 640px)')
   const perspective = props.perspective || "center"
-  const wheelSize = 20
+  const wheelSize = matches ? 10 : 7;
   const slides = props.length
   const slideDegree = 360 / wheelSize
   const slidesPerView = props.loop ? 9 : 1
@@ -34,7 +61,7 @@ export default function VerticalSlider(props: {
     vertical: true,
 
     initial: props.initIdx || 0,
-    loop: true,
+    loop: props.loop,
     dragSpeed: (val) => {
       const height = size.current
       return (
@@ -57,7 +84,7 @@ export default function VerticalSlider(props: {
     mode: "free-snap",
   })
 
-  const [sliderRef, slider] = useKeenSlider<HTMLDivElement>(options.current)
+  const [sliderRef, slider] = useKeenSlider<HTMLDivElement>(options.current, autoSwitch)
 
   const [radius, setRadius] = React.useState(0)
 
@@ -85,7 +112,7 @@ export default function VerticalSlider(props: {
       const value = props.setValue
         ? props.setValue(i, sliderState.abs + Math.round(distance))
         : i
-      values.push({ style, value })
+      values.push({ style, value: sliderText[i] })
     }
     return values
   }
@@ -103,7 +130,7 @@ export default function VerticalSlider(props: {
         }}
       />
       <div className="wheel__inner">
-        <div className="wheel__slides" style={{ width: props.width + "px" }}>
+        <div className="wheel__slides font-gilroy text-3xl font-medium max-sm:text-sm" style={{ width: props.width + "px" }}>
           {slideValues().map(({ style, value }, idx) => (
             <div className="wheel__slide" style={style} key={idx}>
               <span>{value}</span>

@@ -3,6 +3,7 @@ import logo from '@/assets/logo.png';
 import {CheckSolid} from '../icons/CheckSolid';
 import {LockIcon} from '../icons/LockIcon';
 import imgBg from '@/assets/db-bg.png';
+import imgBgWebp from '@/assets/db-bg.webp';
 import './styles.scss';
 import {gsap} from "gsap";
 
@@ -33,7 +34,6 @@ export const SectionUserData = () => {
       gsap.from(refTitle.current, {
         // from Из этого состояния в обычное
         scrollTrigger: {
-          // @ts-ignore
           trigger: refTitle.current, // trigger по какому элементу отслеживать скролл
           start: 'center 80%', // start анимации относительно триггер элемент и viewport
           end: 'top 20%', // конец анимации относительно триггер элемента и viewport
@@ -47,7 +47,6 @@ export const SectionUserData = () => {
       gsap.from(refSubTitle.current, {
         // from Из этого состояния в обычное
         scrollTrigger: {
-          // @ts-ignore
           trigger: refSubTitle.current, // trigger по какому элементу отслеживать скролл
           start: 'center 80%', // start анимации относительно триггер элемент и viewport
           end: 'top 20%', // конец анимации относительно триггер элемента и viewport
@@ -60,7 +59,6 @@ export const SectionUserData = () => {
       gsap.from(refText.current, {
         // from Из этого состояния в обычное
         scrollTrigger: {
-          // @ts-ignore
           trigger: refText.current, // trigger по какому элементу отслеживать скролл
           start: 'center 80%', // start анимации относительно триггер элемент и viewport
           end: 'top center', // конец анимации относительно триггер элемента и viewport
@@ -74,7 +72,6 @@ export const SectionUserData = () => {
       gsap.from(refRightCol.current, {
         // from Из этого состояния в обычное
         scrollTrigger: {
-          // @ts-ignore
           trigger: refRightCol.current, // trigger по какому элементу отслеживать скролл
           start: 'center 80%', // start анимации относительно триггер элемент и viewport
           end: 'top center', // конец анимации относительно триггер элемента и viewport
@@ -94,12 +91,15 @@ export const SectionUserData = () => {
   return (
     <section ref={refSection} className="">
       <div className="flex justify-center -mb-[250px] max-sm:-mb-[70px]">
-        <img
-          ref={refImgBg}
-          src={imgBg}
-          alt="imgBg"
-          className="w-[1920px] max-sm:max-w-[150%] object-contain mix-blend-lighten"
-        />
+        <picture>
+        <source srcSet={imgBgWebp} type="image/webp" />
+          <img
+            ref={refImgBg}
+            src={imgBg}
+            alt="imgBg"
+            className="w-[1920px] max-sm:max-w-[150%] object-contain mix-blend-lighten"
+          />
+        </picture>
       </div>
       <div className="container flex justify-between items-center max-sm:flex-col max-sm:gap-7">
         <div ref={refSubTitle} className="flex-shrink-0">

@@ -1,13 +1,15 @@
-import VerticalSlider from './VerticalSlider';
 import mobileImg from '@/assets/swipe.png';
 import swipeLeft from '@/assets/swipe-toFilter.png';
 import swipeRight from '@/assets/swipe-toSave.png';
+import mobileImgWebp from '@/assets/swipe.webp';
+import swipeLeftWebp from '@/assets/swipe-toFilter.webp';
+import swipeRightWebp from '@/assets/swipe-toSave.webp';
 import {gsap} from 'gsap'
 import { useLayoutEffect, useRef } from 'react';
 
 export const SectionSwipe = () => {
-  const refLeftSwipe = useRef<HTMLElement | null>(null);
-  const refRightSwipe = useRef<HTMLElement | null>(null);
+  const refLeftSwipe = useRef<HTMLImageElement | null>(null);
+  const refRightSwipe = useRef<HTMLImageElement | null>(null);
   useLayoutEffect(() => {
     let ctx = gsap.context(() => {
       gsap.from(refLeftSwipe.current, {
@@ -57,9 +59,9 @@ export const SectionSwipe = () => {
           </p>
         </div>
         <div className="relative">
-          <img src={mobileImg} alt="mobileImg" className="w-[442px] h-[744px] max-sm:w-[230px] max-sm:h-[380px] object-contain" />
-          <img ref={refLeftSwipe} src={swipeLeft} alt="swipeLeft" className="absolute top-[5%] -left-[40%]" />
-          <img ref={refRightSwipe} src={swipeRight} alt="swipeLeft" className="absolute top-[5%] -right-[40%]" />
+          <picture><source srcSet={mobileImgWebp} type="image/webp" /><img src={mobileImg} alt="mobileImg" className="w-[442px] h-[744px] max-sm:w-[230px] max-sm:h-[380px] object-contain" /></picture>
+          <picture><source srcSet={swipeLeftWebp} type="image/webp" /><img ref={refLeftSwipe} src={swipeLeft} alt="swipeLeft" className="absolute top-[5%] -left-[40%]" /></picture>
+          <picture><source srcSet={swipeRightWebp} type="image/webp" /><img ref={refRightSwipe} src={swipeRight} alt="swipeLeft" className="absolute top-[5%] -right-[40%]" /></picture>
         </div>
       </div>
     </section>

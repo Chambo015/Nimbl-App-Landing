@@ -1,6 +1,7 @@
 import React from 'react'
 import imgLeftBg from '@/assets/bg-summarize-video.png'
 import mobileSumm from '@/assets/rotated-phone-summarize.png'
+import mobileSummWebp from '@/assets/rotated-phone-summarize.webp'
 
 export const SectionSummarizeVideo = () => {
   return (
@@ -12,7 +13,7 @@ export const SectionSummarizeVideo = () => {
         <div className='flex justify-center items-center py-11 relative mt-16 max-sm:mt-8'>
             <div style={{'--image-url': `url(${imgLeftBg})`}}  className="bg-[image:var(--image-url)] bg-cover absolute left-0 top-0 h-full w-1/2 z-0"></div>
             <div className='absolute bg-[#1F283A] right-0 top-0 h-full w-1/2 z-0'></div>
-            <img src={mobileSumm} alt="mobileSumm" className='w-[1150px] h-[612px] relative z-10 max-sm:w-full max-sm:h-auto' />
+            <picture><source srcSet={mobileSummWebp} type="image/webp" /><img src={mobileSumm} alt="mobileSumm" className='w-[1150px] h-[612px] relative z-10 max-sm:w-full max-sm:h-auto' /></picture>
         </div>
     </section>
   )

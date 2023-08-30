@@ -1,5 +1,6 @@
 import React from 'react';
 import rocket from '@/assets/NIMBL-rocket.png';
+import rocketWebp from '@/assets/NIMBL-rocket.webp';
 
 export const SectionRoadmap = () => {
   return (
@@ -42,11 +43,14 @@ export const SectionRoadmap = () => {
             </ul>
           </div>
         </div>
-         <img
-          src={rocket}
-          alt="rocket"
-          className="mix-blend-screen w-[1000px] object-contain mx-auto max-sm:absolute max-sm:-rotate-90 max-sm:top-[150px]  max-sm:-right-[50px] max-sm:w-[350px] max-sm:block"
-        /> 
+         <picture>
+         <source srcSet={rocketWebp} type="image/webp" />
+           <img
+            src={rocket}
+            alt="rocket"
+            className="mix-blend-screen w-[1000px] object-contain mx-auto max-sm:absolute max-sm:-rotate-90 max-sm:top-[150px]  max-sm:-right-[50px] max-sm:w-[350px] max-sm:block"
+          /> 
+         </picture>
         <div className="flex justify-between gap-8 max-sm:flex-col max-sm:w-[210px] max-sm:mt-7">
           <div>
             <p className="bg-gradient-to-b from-[#9B6AFF] to-[#6529E0] text-transparent bg-clip-text font-rfdewi text-2xl uppercase font-black max-sm:text-sm">

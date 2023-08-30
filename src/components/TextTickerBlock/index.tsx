@@ -19,7 +19,7 @@ export const TextTickerBlock: FC<Props> = () => {
     'AMAs  Communities',
   ];
   return (
-    <section className="bg-[#20133E] font-gilroy text-white flex w-screen overflow-hidden mt-16">
+    <section className="bg-[#20133E] font-gilroy text-white flex w-screen overflow-hidden">
       <div className="whitespace-nowrap inner-line relative py-1 xl:py-2 shrink-0 mx-2">
         {text.map((item) => {
           return <><span>{item}</span><span className='px-2'>•</span></>;

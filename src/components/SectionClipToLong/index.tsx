@@ -1,5 +1,6 @@
 import { HeroButton } from '../HeroButton'
 import handImg from '@/assets/hand.png'
+import handImgWebp from '@/assets/hand.webp'
 import ReactPlayer from 'react-player'
 
 
@@ -18,8 +19,8 @@ export const SectionClipToLong  = () => {
           </div>
         </div>
         <div className='shrink-0 max-sm:mt-5 relative'>
-          <img loading="lazy" src={handImg} alt="handImg" className='w-[1045px] h-[833px] object-contain max-sm:max-w-[170%] max-sm:h-auto ' />
-          <div className='absolute w-[32%] z-20 h-[85%] top-[7%] left-[12%] rounded-3xl overflow-hidden'>
+         <picture><source srcSet={handImgWebp} type="image/webp" /><img loading="lazy" src={handImg} alt="handImg" className='w-[1045px] h-[833px] object-contain max-sm:max-w-[170%] max-sm:h-auto ' /></picture>
+          <div className='absolute w-[32%] z-20 h-[85%] top-[7%] left-[12%] rounded-3xl overflow-hidden max-sm:w-[54%] max-sm:left-[20%]'>
           <ReactPlayer width="360" height="640" muted  loop playing url='https://d2n3zca7e0phmo.cloudfront.net/lv_0_20230824191446.mp4' />
           </div>
         </div>

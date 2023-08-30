@@ -2,6 +2,7 @@ import { FC } from 'react'
 import { HeroButton } from '../HeroButton'
 import { EscapeIcon } from '../icons/EscapeIcon'
 import imgMobile from '@/assets/nimbl-screens-modal.png'
+import imgMobileWebp from '@/assets/nimbl-screens-modal.webp'
 
 interface Props {
     setIsModalOpen: React.Dispatch<React.SetStateAction<boolean>>
@@ -18,7 +19,7 @@ export const ModalCommunity: FC<Props> = ({setIsModalOpen}) => {
             <HeroButton regular md><p className="font-gilroy text-2xl leading-none font-medium ">X/Twitter</p></HeroButton>
             <HeroButton regular md><p className="font-gilroy text-2xl leading-none font-medium ">Telegram</p></HeroButton>
             </div>
-            <img loading="lazy" src={imgMobile} alt="imgMobile" className='absolute bottom-0 right-[17px] h-full z-10' />
+            <picture><source srcSet={imgMobileWebp} type="image/webp" /><img loading="lazy" src={imgMobile} alt="imgMobile" className='absolute bottom-0 right-[17px] h-full z-10' /></picture>
         </div>
     </div>
   )
