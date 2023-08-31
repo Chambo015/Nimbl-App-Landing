@@ -45,7 +45,7 @@ export const SectionChannelsTokenized = () => {
     return () => ctx.revert(); // cleanup
   }, []); 
   return (
-    <section ref={refSection} className='pt-[200px]'>
+    <section ref={refSection} className='pt-[200px] max-sm:pt-[50px]'>
       <div className="flex justify-center px-4 gap-9 max-sm:flex-col">
         <div ref={refLeftCol} className=' flex flex-col items-start justify-center max-sm:items-center'>
           <span className="text-[#0061F0] text-2xl font-medium font-gilroy py-1 px-2 max-sm:text-sm bg-[#001D48] border border-[#1017B9] max-sm:mx-auto max-sm:table ">

@@ -16,6 +16,8 @@ import iconSweden from '@/assets/Sweden.png';
 import iconSwitzerland from '@/assets/Switzerland.png';
 import iconTurkey from '@/assets/Turkey.png';
 import iconUS from '@/assets/US.png';
+import clipToLongImg from '@/assets/swipe.png';
+import clipToLongImgWebp from '@/assets/swipe.webp';
 
 export const SectionGridAI = () => {
   return (
@@ -77,6 +79,7 @@ export const SectionGridAI = () => {
             <p className="font-gilroy text-2xl text-center mt-8 max-sm:text-base">
             Generate Clips from Long form video on autopilot
             </p>
+            <picture><source srcSet={clipToLongImgWebp} type="image/webp" /><img loading="lazy" src={clipToLongImg} alt="imgMobileGpt" className="w-[300px] h-[300px] object-cover object-top mx-auto mt-4" /></picture>
           </div>
           <div className="bg-[#20133E] pt-5 px-5 flex flex-col">
             <h3 className="text-center bg-gradient-to-b from-white to-white/50 text-transparent bg-clip-text text-[50px] font-black uppercase font-rfdewi leading-none max-sm:text-2xl">

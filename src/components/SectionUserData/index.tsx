@@ -91,7 +91,7 @@ export const SectionUserData = () => {
   return (
     <section ref={refSection} className="">
       <div className="flex justify-center -mb-[250px] max-sm:-mb-[70px]">
-        <picture>
+        <picture className='flex justify-center'>
         <source srcSet={imgBgWebp} type="image/webp" />
           <img
             ref={refImgBg}
