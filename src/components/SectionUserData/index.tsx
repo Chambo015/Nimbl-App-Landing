@@ -8,7 +8,7 @@ import './styles.scss';
 import {gsap} from "gsap";
 
 export const SectionUserData = () => {
-  const refImgBg = useRef<HTMLElement | null>(null);
+  const refImgBg = useRef<HTMLImageElement | null>(null);
   const refSection = useRef<HTMLElement | null>(null);
   const refTitle = useRef<HTMLElement | null>(null);
   const refText = useRef<HTMLElement | null>(null);
@@ -24,8 +24,8 @@ export const SectionUserData = () => {
         // from Из этого состояния в обычное
         scrollTrigger: {
           trigger: refImgBg.current, // trigger по какому элементу отслеживать скролл
-          start: 'center 60%', // start анимации относительно триггер элемент и viewport
-          end: 'bottom 30%', // конец анимации относительно триггер элемента и viewport
+          start: 'center 86%', // start анимации относительно триггер элемент и viewport
+          end: 'bottom 50%', // конец анимации относительно триггер элемента и viewport
           scrub: 1.9, // scrub будет анимация идти в обратном порядке
         },
         opacity: 0,
@@ -35,8 +35,8 @@ export const SectionUserData = () => {
         // from Из этого состояния в обычное
         scrollTrigger: {
           trigger: refTitle.current, // trigger по какому элементу отслеживать скролл
-          start: 'center 80%', // start анимации относительно триггер элемент и viewport
-          end: 'top 20%', // конец анимации относительно триггер элемента и viewport
+          start: 'top 80%', // start анимации относительно триггер элемент и viewport
+          end: 'top 50%', // конец анимации относительно триггер элемента и viewport
           scrub: 1.9, // scrub будет анимация идти в обратном порядке
         },
         opacity: 0,
@@ -48,8 +48,8 @@ export const SectionUserData = () => {
         // from Из этого состояния в обычное
         scrollTrigger: {
           trigger: refSubTitle.current, // trigger по какому элементу отслеживать скролл
-          start: 'center 80%', // start анимации относительно триггер элемент и viewport
-          end: 'top 20%', // конец анимации относительно триггер элемента и viewport
+          start: 'top 88%', // start анимации относительно триггер элемент и viewport
+          end: 'top 50%', // конец анимации относительно триггер элемента и viewport
           scrub: 1.9, // scrub будет анимация идти в обратном порядке
         },
         opacity: 0,
@@ -60,7 +60,7 @@ export const SectionUserData = () => {
         // from Из этого состояния в обычное
         scrollTrigger: {
           trigger: refText.current, // trigger по какому элементу отслеживать скролл
-          start: 'center 80%', // start анимации относительно триггер элемент и viewport
+          start: 'center 88%', // start анимации относительно триггер элемент и viewport
           end: 'top center', // конец анимации относительно триггер элемента и viewport
           scrub: 1.9, // scrub будет анимация идти в обратном порядке
         },
@@ -73,7 +73,7 @@ export const SectionUserData = () => {
         // from Из этого состояния в обычное
         scrollTrigger: {
           trigger: refRightCol.current, // trigger по какому элементу отслеживать скролл
-          start: 'center 80%', // start анимации относительно триггер элемент и viewport
+          start: 'top 80%', // start анимации относительно триггер элемент и viewport
           end: 'top center', // конец анимации относительно триггер элемента и viewport
           scrub: 1.9, // scrub будет анимация идти в обратном порядке
         },

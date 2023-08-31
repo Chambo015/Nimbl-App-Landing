@@ -188,7 +188,13 @@ export const SectionClaim = () => {
       {x: 450, autoAlpha: 1, duration: 2},
       '<.5'
     );
-  });
+    return () => {
+      tl1.current?.kill()
+      tl2.current?.kill()
+      tl3.current?.kill()
+      tl4.current?.kill()
+    }
+  }, []);
   return (
     <section ref={refSection} className="relative flex justify-center">
       <div>

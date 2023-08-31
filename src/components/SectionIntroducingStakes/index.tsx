@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useLayoutEffect, useRef } from 'react';
 import {ChartBackground} from './ChartBackground';
 import {ChartLine1} from './ChartLines/ChartLine1';
 import {ChartLine2} from './ChartLines/ChartLine2';
@@ -10,11 +10,51 @@ import userImg3 from '@/assets/chart-user3.png';
 import userImg1Webp from '@/assets/chart-user1.webp';
 import userImg2Webp from '@/assets/chart-user2.webp';
 import userImg3Webp from '@/assets/chart-user3.webp';
+import {gsap} from 'gsap';
 
 export const SectionIntroducingStakes = () => {
+  const refTitle = useRef<HTMLDivElement | null>(null);
+  const refSection = useRef<HTMLDivElement | null>(null);
+  const refChart = useRef<HTMLDivElement | null>(null);
+
+  useLayoutEffect(() => {
+    // create our context. This function is invoked immediately and all GSAP animations and ScrollTriggers created during the execution of this function get recorded so we can revert() them later (cleanup)
+    const ctx = gsap.context(() => {
+      // Our animations can use selector text like ".box" 
+      // this will only select '.box' elements that are children of the component
+      gsap.from(refTitle.current, {
+        // from Из этого состояния в обычное
+        scrollTrigger: {
+          trigger: refTitle.current, // trigger по какому элементу отслеживать скролл
+          start: 'top 85%', // start анимации относительно триггер элемент и viewport
+          end: 'top 20%', // конец анимации относительно триггер элемента и viewport
+          scrub: 1.9, // scrub будет анимация идти в обратном порядке
+        },
+        opacity: 0,
+        x: -200,
+        duration: 3,
+        force3D: true,
+      });
+      gsap.from(refChart.current, {
+        // from Из этого состояния в обычное
+        scrollTrigger: {
+          trigger: refChart.current, // trigger по какому элементу отслеживать скролл
+          start: 'top 90%', // start анимации относительно триггер элемент и viewport
+          end: 'top 50%', // конец анимации относительно триггер элемента и viewport
+          scrub: 1.9, // scrub будет анимация идти в обратном порядке
+        },
+        opacity: 0,
+        y: 200,
+        duration: 3,
+        force3D: true,
+      });
+    }, refSection); // <- IMPORTANT! Scopes selector text
+    
+    return () => ctx.revert(); // cleanup
+  }, []); 
   return (
-    <section className="pt-[200px] max-sm:pt-[100px]">
-      <div className="container">
+    <section ref={refSection} className="pt-[200px] max-sm:pt-[100px]">
+      <div ref={refTitle} className="container">
         <h2 className="bg-gradient-to-b from-white to-white/50 text-transparent bg-clip-text text-[50px] leading-none font-black uppercase font-rfdewi max-sm:text-2xl text-center">
           Introducing Stakes
         </h2>
@@ -23,7 +63,7 @@ export const SectionIntroducingStakes = () => {
           with the excitement of owning stakes in your favorite groups and influencers.
         </p>
       </div>
-      <div className="flex justify-center mt-28">
+      <div ref={refChart} className="flex justify-center mt-28">
         <div className="relative">
           <ChartBackground />
           <div className="absolute top-[5%] left-0 w-full">

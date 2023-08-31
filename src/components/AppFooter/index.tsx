@@ -10,7 +10,7 @@ import { HeroButton } from '../HeroButton';
 export const AppFooter = () => {
   return (
     <footer className='mt-[200px] relative max-sm:mt-[100px]'>
-      <img src={nimblBgImg} alt="nimblBgImg" className='mx-auto container object-contain select-none pointer-events-none' loading="lazy" />
+    {/*   <img src={nimblBgImg} alt="nimblBgImg" className='mx-auto container object-contain select-none pointer-events-none' loading="lazy" /> */}
       <div className='bg-[#20133E] h-36 max-sm:h-24'>
         <div className='container pt-7 pb-4 max-sm:pb-2 max-sm:pt-5'>
         <div className='flex items-center '>

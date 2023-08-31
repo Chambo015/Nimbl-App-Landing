@@ -8,6 +8,7 @@ import {Popover} from '@headlessui/react';
 import {HeroButton} from '../HeroButton';
 import Scrambler from 'scrambling-text';
 import {throttle} from '@/utils';
+import {gsap} from 'gsap';
 
 interface Props {
   setIsModalOpen: React.Dispatch<React.SetStateAction<boolean>>;
@@ -17,6 +18,7 @@ interface Props {
 
 export const AppHeader: FC<Props> = ({setIsModalOpen, isInviteOpen, setIsInviteOpen}) => {
   const [isOpenMenuMobile, setIsOpenMenuMobile] = useState(false);
+  const refHeader = useRef<HTMLElement | null>(null);
   const isMobile = useMediaQuery('(max-width: 640px)');
   const [text, setText] = useState('Lightpaper');
   // create an instance of Scrambler using useRef.
@@ -29,8 +31,12 @@ export const AppHeader: FC<Props> = ({setIsModalOpen, isInviteOpen, setIsInviteO
 
   const handleTextScrambleWithThrottle = useMemo(() => throttle(handleTextScramble, 2000), []);
 
+  useEffect(() => {
+    gsap.fromTo(refHeader.current, {  yPercent: -100}, {duration: 1, yPercent: 0, delay: 1.5})
+  }, [])
+
   return (
-    <header className="w-full bg-[rgba(33,25,61,.30)] h-20 max-sm:h-[50px] fixed top-0 inset-x-0 backdrop-blur-md z-50">
+    <header ref={refHeader} className="w-full bg-[rgba(33,25,61,.30)] h-20 max-sm:h-[50px] fixed top-0 inset-x-0 backdrop-blur-md z-50">
       <div className="px-2 flex items-center h-full gap-[20px] justify-between">
         <button
           onClick={() => {

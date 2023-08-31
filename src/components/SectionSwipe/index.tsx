@@ -10,8 +10,10 @@ import { useLayoutEffect, useRef } from 'react';
 export const SectionSwipe = () => {
   const refLeftSwipe = useRef<HTMLImageElement | null>(null);
   const refRightSwipe = useRef<HTMLImageElement | null>(null);
+  const refSection = useRef<HTMLDivElement | null>(null);
+  const refLeftCol = useRef<HTMLDivElement | null>(null);
   useLayoutEffect(() => {
-    let ctx = gsap.context(() => {
+    const ctx = gsap.context(() => {
       gsap.from(refLeftSwipe.current, {
         // from Из этого состояния в обычное
         scrollTrigger: {
@@ -38,15 +40,27 @@ export const SectionSwipe = () => {
         force3D: true,
         xPercent: -60,
       });
+      gsap.from(refLeftCol.current, {
+        // from Из этого состояния в обычное
+        scrollTrigger: {
+          trigger: refLeftCol.current, // trigger по какому элементу отслеживать скролл
+          start: 'top 88%', // start анимации относительно триггер элемент и viewport
+          end: 'bottom 50%', // конец анимации относительно триггер элемента и viewport
+          scrub: 1.9, // scrub будет анимация идти в обратном порядке
+        },
+        opacity: 0,
+        force3D: true,
+        xPercent: -60,
+      });
       
       
-    }, refLeftSwipe); // <- IMPORTANT! Scopes selector text
+    }, refSection); // <- IMPORTANT! Scopes selector text
     return () => ctx.revert(); // cleanup
   }, []); 
   return (
-    <section className="pt-32">
+    <section ref={refSection} className="pt-[200px]">
       <div className="container flex gap-14 justify-between items-center max-sm:flex-col">
-        <div className="w-[400px]">
+        <div ref={refLeftCol} className="w-[400px]">
           <h2 className="bg-gradient-to-b from-white to-white/50 font-rfdewi text-transparent bg-clip-text text-5xl font-black uppercase max-sm:text-2xl max-sm:text-center">
             SWIPE
           </h2>
