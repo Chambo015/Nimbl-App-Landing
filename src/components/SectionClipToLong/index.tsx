@@ -1,30 +1,90 @@
-import { HeroButton } from '../HeroButton'
-import handImg from '@/assets/hand.png'
-import handImgWebp from '@/assets/hand.webp'
-import ReactPlayer from 'react-player'
+import {useLayoutEffect, useRef} from 'react';
+import {HeroButton} from '../HeroButton';
+import handImg from '@/assets/hand.png';
+import handImgWebp from '@/assets/hand.webp';
+import ReactPlayer from 'react-player';
+import gsap from 'gsap';
 
+export const SectionClipToLong = () => {
+  const refLeftCol = useRef<HTMLDivElement | null>(null);
+  const refRightCol = useRef<HTMLDivElement | null>(null);
+  const refSection = useRef<HTMLElement | null>(null);
 
+  useLayoutEffect(() => {
+    const ctx = gsap.context(() => {
+      gsap.fromTo(
+        refLeftCol.current,
+        {opacity: 0, xPercent: -50},
+        {
+          scrollTrigger: {
+            trigger: refLeftCol.current, // trigger по какому элементу отслеживать скролл
+            start: 'center 86%', // start анимации относительно триггер элемент и viewport
+            end: 'center 50%', // конец анимации относительно триггер элемента и viewport
+            scrub: 1.9, // scrub будет анимация идти в обратном порядке
+          },
+          opacity: 1,
+          xPercent: 0,
+          force3D: true,
+        }
+      );
+      gsap.fromTo(
+        refRightCol.current,
+        {opacity: 0, xPercent: 50},
+        {
+          scrollTrigger: {
+            trigger: refRightCol.current, // trigger по какому элементу отслеживать скролл
+            start: 'center 86%', // start анимации относительно триггер элемент и viewport
+            end: 'center 50%', // конец анимации относительно триггер элемента и viewport
+            scrub: 1.9, // scrub будет анимация идти в обратном порядке
+          },
+          opacity: 1,
+          xPercent: 0,
+          force3D: true,
+        }
+      );
+    }, refSection); // <- IMPORTANT! Scopes selector text
 
-export const SectionClipToLong  = () => {
+    return () => ctx.revert(); // cleanup
+  }, []);
   return (
-    <section className='pt-40'>
-      <div className='container flex items-center max-sm:flex-col'>
-        <div className='shrink-0'>
-          <h2 className='bg-gradient-to-b from-white to-white/50 text-transparent bg-clip-text font-rfdewi font-black uppercase text-5xl max-sm:text-2xl max-sm:text-center'>clips<span className='text-2xl font-univers lowercase mx-1 max-sm:text-sm'>to</span>Longs</h2>
-          <p className='w-[540px] font-gilroy text-2xl text-white mt-14 max-sm:text-base max-sm:w-full max-sm:text-center max-sm:mt-3'>Post a short-form teaser leading to a long-form video, get the outreach of bite-sized content into your longer piece of content.</p>
-          <div className='mt-14 max-sm:flex max-sm:justify-center'>
+    <section className="pt-40" ref={refSection}>
+      <div className="container flex items-center max-sm:flex-col">
+        <div className="shrink-0" ref={refLeftCol}>
+          <h2 className="bg-gradient-to-b from-white to-white/50 text-transparent bg-clip-text font-rfdewi font-black uppercase text-5xl max-sm:text-2xl max-sm:text-center">
+            clips<span className="text-2xl font-univers lowercase mx-1 max-sm:text-sm">to</span>Longs
+          </h2>
+          <p className="w-[540px] font-gilroy text-2xl text-white mt-14 max-sm:text-base max-sm:w-full max-sm:text-center max-sm:mt-3">
+            Post a short-form teaser leading to a long-form video, get the outreach of bite-sized content into your
+            longer piece of content.
+          </p>
+          <div className="mt-14 max-sm:flex max-sm:justify-center">
             <HeroButton>
-            <p className="font-rfdewi text-2xl max-sm:text-sm font-bold">DOWNLOAD APP</p>
-          </HeroButton>
+              <p className="font-rfdewi text-2xl max-sm:text-sm font-bold">DOWNLOAD APP</p>
+            </HeroButton>
           </div>
         </div>
-        <div className='shrink-0 max-sm:mt-5 relative'>
-         <picture><source srcSet={handImgWebp} type="image/webp" /><img loading="lazy" src={handImg} alt="handImg" className='w-[1045px] h-[833px] object-contain max-sm:max-w-[170%] max-sm:h-auto ' /></picture>
-          <div className='absolute w-[32%] z-20 h-[85%] top-[7%] left-[12%] rounded-3xl overflow-hidden max-sm:w-[54%] max-sm:left-[20%]'>
-          <ReactPlayer width="360" height="640" muted  loop playing url='https://d2n3zca7e0phmo.cloudfront.net/lv_0_20230824191446.mp4' />
+        <div className="shrink-0 max-sm:mt-5 relative" ref={refRightCol}>
+          <picture>
+            <source srcSet={handImgWebp} type="image/webp" />
+            <img
+              loading="lazy"
+              src={handImg}
+              alt="handImg"
+              className="w-[1045px] h-[833px] object-contain max-sm:max-w-[170%] max-sm:h-auto "
+            />
+          </picture>
+          <div className="absolute w-[32%] z-20 h-[85%] top-[7%] left-[12%] rounded-3xl overflow-hidden max-sm:w-[54%] max-sm:left-[20%]">
+            <ReactPlayer
+              width="360"
+              height="640"
+              muted
+              loop
+              playing
+              url="https://d2n3zca7e0phmo.cloudfront.net/lv_0_20230824191446.mp4"
+            />
           </div>
         </div>
       </div>
     </section>
-  )
-}
+  );
+};

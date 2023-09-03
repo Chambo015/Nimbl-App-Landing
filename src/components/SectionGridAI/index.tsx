@@ -1,4 +1,4 @@
-import React from 'react';
+import {useLayoutEffect, useRef} from 'react';
 import imgMobileGpt from '@/assets/ai-gpt-mobile.png';
 import imgMobileGptWebp from '@/assets/ai-gpt-mobile.webp';
 import imglaunguages from '@/assets/ai-launguages.png';
@@ -18,13 +18,86 @@ import iconTurkey from '@/assets/Turkey.png';
 import iconUS from '@/assets/US.png';
 import clipToLongImg from '@/assets/swipe.png';
 import clipToLongImgWebp from '@/assets/swipe.webp';
+import gsap from 'gsap';
 
 export const SectionGridAI = () => {
+  const refItem1 = useRef<HTMLDivElement | null>(null);
+  const refItem2 = useRef<HTMLDivElement | null>(null);
+  const refItem3 = useRef<HTMLDivElement | null>(null);
+  const refItem4 = useRef<HTMLDivElement | null>(null);
+  const refSection = useRef<HTMLElement | null>(null);
+
+  useLayoutEffect(() => {
+    const ctx = gsap.context(() => {
+      gsap.fromTo(
+        refItem1.current,
+        {opacity: 0, xPercent: -50},
+        {
+          scrollTrigger: {
+            trigger: refItem1.current, // trigger по какому элементу отслеживать скролл
+            start: 'center 86%', // start анимации относительно триггер элемент и viewport
+            end: 'center 50%', // конец анимации относительно триггер элемента и viewport
+            scrub: 1.9, // scrub будет анимация идти в обратном порядке
+          },
+          opacity: 1,
+          xPercent: 0,
+          force3D: true,
+        }
+      );
+      gsap.fromTo(
+        refItem2.current,
+        {opacity: 0, xPercent: 50},
+        {
+          scrollTrigger: {
+            trigger: refItem2.current, // trigger по какому элементу отслеживать скролл
+            start: 'center 86%', // start анимации относительно триггер элемент и viewport
+            end: 'center 50%', // конец анимации относительно триггер элемента и viewport
+            scrub: 1.9, // scrub будет анимация идти в обратном порядке
+          },
+          opacity: 1,
+          xPercent: 0,
+          force3D: true,
+        }
+      );
+      gsap.fromTo(
+        refItem3.current,
+        {opacity: 0, xPercent: -50},
+        {
+          scrollTrigger: {
+            trigger: refItem3.current, // trigger по какому элементу отслеживать скролл
+            start: 'center 86%', // start анимации относительно триггер элемент и viewport
+            end: 'center 50%', // конец анимации относительно триггер элемента и viewport
+            scrub: 1.9, // scrub будет анимация идти в обратном порядке
+          },
+          opacity: 1,
+          xPercent: 0,
+          force3D: true,
+        }
+      );
+      gsap.fromTo(
+        refItem4.current,
+        {opacity: 0, xPercent: 50},
+        {
+          scrollTrigger: {
+            trigger: refItem4.current, // trigger по какому элементу отслеживать скролл
+            start: 'center 86%', // start анимации относительно триггер элемент и viewport
+            end: 'center 50%', // конец анимации относительно триггер элемента и viewport
+            scrub: 1.9, // scrub будет анимация идти в обратном порядке
+          },
+          opacity: 1,
+          xPercent: 0,
+          force3D: true,
+        }
+      );
+    }, refSection); // <- IMPORTANT! Scopes selector text
+
+    return () => ctx.revert(); // cleanup
+  }, []);
   return (
-    <section>
+    <section ref={refSection}>
       <div className="container pt-[200px] max-sm:pt-[100px]">
         <div className="grid-cols-2 gap-10 grid grid-rows-2 max-sm:grid-cols-1 max-sm:grid-rows-none">
-          <div className="bg-[#20133E] pt-5 px-10">
+          <div className="bg-[#20133E] pt-5 px-10" ref={refItem1}>
             <h3 className="text-center bg-gradient-to-b from-white to-white/50 text-transparent bg-clip-text text-[50px] font-black uppercase font-rfdewi leading-none max-sm:text-2xl">
               ai powered search
             </h3>
@@ -35,7 +108,7 @@ export const SectionGridAI = () => {
               <picture><source srcSet={imgMobileGptWebp} type="image/webp" /><img loading="lazy" src={imgMobileGpt} alt="imgMobileGpt" className="w-[290px] object-contain mx-auto" /></picture>
             </div>
           </div>
-          <div className="bg-[#20133E] pt-5 flex flex-col">
+          <div className="bg-[#20133E] pt-5 flex flex-col" ref={refItem2}>
             <div className="px-10">
               <p className="text-center text-white text-2xl font-normal uppercase tracking-[14.64px] font-gilroy max-sm:text-xs max-sm:tracking-[8px]">
                 translate video
@@ -61,7 +134,7 @@ export const SectionGridAI = () => {
              <picture><source srcSet={imglaunguagesWebp} type="image/webp" /><img loading="lazy" src={imglaunguages} alt="imgMobileGpt" className="w-full h-[260px] object-cover" /></picture>
             </div>
           </div>
-          <div className="bg-[#20133E] pt-5 px-10">
+          <div className="bg-[#20133E] pt-5 px-10" ref={refItem3}>
             <div className='flex flex-col justify-center items-center'>
               <div className="flex gap-5 items-center  max-sm:gap-2">
                 <h3 className="bg-gradient-to-b from-white to-white/50 text-transparent bg-clip-text text-[50px] font-black uppercase font-rfdewi leading-none max-sm:text-2xl">
@@ -81,7 +154,7 @@ export const SectionGridAI = () => {
             </p>
             <picture><source srcSet={clipToLongImgWebp} type="image/webp" /><img loading="lazy" src={clipToLongImg} alt="imgMobileGpt" className="w-[300px] h-[300px] object-cover object-top mx-auto mt-4" /></picture>
           </div>
-          <div className="bg-[#20133E] pt-5 px-5 flex flex-col">
+          <div className="bg-[#20133E] pt-5 px-5 flex flex-col" ref={refItem4}>
             <h3 className="text-center bg-gradient-to-b from-white to-white/50 text-transparent bg-clip-text text-[50px] font-black uppercase font-rfdewi leading-none max-sm:text-2xl">
             feed curated <br className='hidden max-sm:inline'/> by ai
             </h3>

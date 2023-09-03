@@ -26,8 +26,6 @@ gsap.registerPlugin(ScrollTrigger);
 gsap.config({
     force3D: true,
   });
-// @ts-ignore
-import Luxy from 'luxy.js'
 import { SectionChannelsTokenized } from './components/SectionChannelsTokenized';
 
 
@@ -36,14 +34,9 @@ function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isModalVideoOpen, setIsModalVideoOpen] = useState(false);
   const [isInviteOpen, setIsInviteOpen] = useState(false);
-
-  useEffect(() => {
-    Luxy.init()
-  }, [])
-
   return (
     <> <AppHeader setIsModalOpen={setIsModalOpen} setIsInviteOpen={setIsInviteOpen} isInviteOpen={isInviteOpen} />
-      <div id="luxy" className='bg-[#0F0722]'>
+      <div className='bg-[#0F0722]'>
         {!isInviteOpen ? <><main  className="main overflow-hidden">
           <SectionHero />
           <SectionIntroducingStakes />

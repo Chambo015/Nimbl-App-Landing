@@ -30,164 +30,43 @@ export const SectionClaim = () => {
   const tl3 = useRef<gsap.core.Timeline>();
   const tl4 = useRef<gsap.core.Timeline>();
 
-  /*   useLayoutEffect(() => {
-    let ctx = gsap.context(() => {
-      gsap.to(refImg2.current, {
-        // from Из этого состояния в обычное
-        scrollTrigger: {
-          // @ts-ignore
-          trigger: refImg2.current, // trigger по какому элементу отслеживать скролл
-          start: 'center 80%', // start анимации относительно триггер элемент и viewport
-          end: 'top 20%', // конец анимации относительно триггер элемента и viewport
-          scrub: 1.9, // scrub будет анимация идти в обратном порядке
-        },
-        x: 0,
-        autoAlpha: 0,
-        duration: 2,
-        force3D: true,
-      });
-      gsap.to(refImg3.current, {
-        // from Из этого состояния в обычное
-        scrollTrigger: {
-          // @ts-ignore
-          trigger: refImg3.current, // trigger по какому элементу отслеживать скролл
-          start: 'center 70%', // start анимации относительно триггер элемент и viewport
-          end: 'top 20%', // конец анимации относительно триггер элемента и viewport
-          scrub: 1.9, // scrub будет анимация идти в обратном порядке
-        },
-        x: 0,
-        autoAlpha: 0,
-        duration: 3,
-        force3D: true,
-      });
-      gsap.to(refImg4.current, {
-        // from Из этого состояния в обычное
-        scrollTrigger: {
-          // @ts-ignore
-          trigger: refImg4.current, // trigger по какому элементу отслеживать скролл
-          start: 'center 60%', // start анимации относительно триггер элемент и viewport
-          end: 'top center', // конец анимации относительно триггер элемента и viewport
-          scrub: 1.9, // scrub будет анимация идти в обратном порядке
-        },
-        x: 0,
-        autoAlpha: 0,
-        duration: 4,
-        force3D: true,
-      });
-      gsap.to(refImg5.current, {
-        // from Из этого состояния в обычное
-        scrollTrigger: {
-          // @ts-ignore
-          trigger: refImg5.current, // trigger по какому элементу отслеживать скролл
-          start: 'center 50%', // start анимации относительно триггер элемент и viewport
-          end: 'top 40%', // конец анимации относительно триггер элемента и viewport
-          scrub: 1.9, // scrub будет анимация идти в обратном порядке
-        },
-        x: 0,
-        autoAlpha: 0,
-        duration: 5,
-        force3D: true,
-      });
-
-      gsap.from(refImg2Prime.current, {
-        // from Из этого состояния в обычное
-        scrollTrigger: {
-          // @ts-ignore
-          trigger: refImg2.current, // trigger по какому элементу отслеживать скролл
-          start: 'center 80%', // start анимации относительно триггер элемент и viewport
-          end: 'top 20%', // конец анимации относительно триггер элемента и viewport
-          scrub: 1.9, // scrub будет анимация идти в обратном порядке
-        },
-        x: 0,
-        autoAlpha: 0,
-        duration: 2,
-        force3D: true,
-      });
-      gsap.from(refImg3Prime.current, {
-        // from Из этого состояния в обычное
-        scrollTrigger: {
-          // @ts-ignore
-          trigger: refImg3.current, // trigger по какому элементу отслеживать скролл
-          start: 'center 70%', // start анимации относительно триггер элемент и viewport
-          end: 'top 20%', // конец анимации относительно триггер элемента и viewport
-          scrub: 1.9, // scrub будет анимация идти в обратном порядке
-        },
-        x: 0,
-        autoAlpha: 0,
-        duration: 3,
-        force3D: true,
-      });
-      gsap.from(refImg4Prime.current, {
-        // from Из этого состояния в обычное
-        scrollTrigger: {
-          // @ts-ignore
-          trigger: refImg4.current, // trigger по какому элементу отслеживать скролл
-          start: 'center 60%', // start анимации относительно триггер элемент и viewport
-          end: 'top center', // конец анимации относительно триггер элемента и viewport
-          scrub: 1.9, // scrub будет анимация идти в обратном порядке
-        },
-        x: 0,
-        autoAlpha: 0,
-        duration: 4,
-        force3D: true,
-      });
-      gsap.from(refImg5Prime.current, {
-        // from Из этого состояния в обычное
-        scrollTrigger: {
-          // @ts-ignore
-          trigger: refImg5.current, // trigger по какому элементу отслеживать скролл
-          start: 'center 50%', // start анимации относительно триггер элемент и viewport
-          end: 'top 40%', // конец анимации относительно триггер элемента и viewport
-          scrub: 1.9, // scrub будет анимация идти в обратном порядке
-        },
-        x: 0,
-        autoAlpha: 0,
-        duration: 5,
-        force3D: true,
-      });
-      
-    }, refSection); // <- IMPORTANT! Scopes selector text
-    
-    return () => ctx.revert(); // cleanup
-    
-  }, []);  */
 
   useEffect(() => {
     tl1.current = gsap.timeline({repeat: -1});
-    tl1.current.to(refImg2.current, {x: 0, autoAlpha: 0, duration: 2});
+    tl1.current.to(refImg2.current, {x: 0, autoAlpha: 0, duration: 3, scale: 0.5});
     tl1.current.fromTo(
       refImg5Prime.current,
-      {x: 0, autoAlpha: 0, duration: 2},
-      {x: 850, autoAlpha: 1, duration: 2},
-      '<.5'
+      {x: 0, autoAlpha: 0, scale: 0.5, y: 200},
+      {x: 850, autoAlpha: 1, duration: 5, scale: 1, y: 0},
+      '<.2'
     );
 
     tl2.current = gsap.timeline({repeat: -1});
-    tl2.current.to(refImg3.current, {x: 0, autoAlpha: 0, duration: 3});
+    tl2.current.to(refImg3.current, {x: 0, autoAlpha: 0, duration: 3, scale: 0.5});
     tl2.current.fromTo(
       refImg4Prime.current,
-      {x: 0, autoAlpha: 0, duration: 2},
-      {x: 700, autoAlpha: 1, duration: 2},
-      '<.5'
+      {x: 0, autoAlpha: 0, scale: 0.5, y: 50},
+      {x: 700, autoAlpha: 1, duration: 4, scale: 1, y: 0},
+      '<.2'
     );
-
+ 
     tl3.current = gsap.timeline({repeat: -1});
-    tl3.current.to(refImg5.current, {x: 0, autoAlpha: 0, duration: 2.5});
+    tl3.current.to(refImg5.current, {x: 0, autoAlpha: 0, duration: 3, scale: 0.5, y: 300});
     tl3.current.fromTo(
       refImg2Prime.current,
-      {x: 0, autoAlpha: 0, duration: 2},
-      {x: 250, autoAlpha: 1, duration: 2},
-      '<.5'
+      {x: 0, autoAlpha: 0, scale: 0.5},
+      {x: 550, autoAlpha: 1, duration: 3, scale: 1},
+      '<.2'
     );
 
     tl4.current = gsap.timeline({repeat: -1});
-    tl4.current.to(refImg4.current, {x: 0, autoAlpha: 0, duration: 3.5});
+    tl4.current.to(refImg4.current, {x: 0, autoAlpha: 0, duration: 3.5, scale: 0.5, y: 100});
     tl4.current.fromTo(
       refImg3Prime.current,
-      {x: 0, autoAlpha: 0, duration: 2},
-      {x: 450, autoAlpha: 1, duration: 2},
-      '<.5'
-    );
+      {x: 0, autoAlpha: 0, scale: 0.5},
+      {x: 650, autoAlpha: 1, duration: 4, y: 100, scale: 1},
+      '<.2'
+    ); 
     return () => {
       tl1.current?.kill()
       tl2.current?.kill()
